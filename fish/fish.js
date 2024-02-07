@@ -90,7 +90,7 @@ function login() {
         if (json.status == "success") {
             document.getElementById("accountstatus").textContent = "Logged in!"
             document.getElementById("accountstatus").style.color = "#84ea84";
-            window.location.replace("/fish/fish.html?username="" + username + "&loginKey=" + json.key);
+            window.location.replace("/googlesite/fish/fish.html?username=" + username + "&loginKey=" + json.key);
         } else {
             document.getElementById("accountstatus").textContent = json.error;
             document.getElementById("accountstatus").style.color = "#ea7b7b";
@@ -122,8 +122,7 @@ function loginGuest() {
             document.getElementById("accountstatus").style.color = "#84ea84";
             document.cookie = "loginKey=" + json.key;
             document.cookie = "username=" + "guest";
-            window.location.replace("/fish/fish.html");
-            window.location.replace("/fish/fish.html?username=guest&loginKey=" + json.key);
+            window.location.replace("/googlesite/fish/fish.html?username=guest&loginKey=" + json.key);
         } else {
             document.getElementById("accountstatus").textContent = json.error;
             document.getElementById("accountstatus").style.color = "#ea7b7b";
