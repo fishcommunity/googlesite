@@ -2002,7 +2002,7 @@ function closeFishingBoat() {
 }
 
 function openFishingBoat() {
-    if (level < 35) {
+    if (level < 25) {
         document.getElementById("fishingboatstatus").style.display = "initial";
         delay(2000).then(() => {
             document.getElementById("fishingboatstatus").style.display = "none";
