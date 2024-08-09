@@ -368,10 +368,69 @@ html,body{min-height:100%;}
   text-decoration: none;
 }
 
+
+.nicebutton {
+  font-family: Arial;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 4px 4px 4px 4px;
+  background-color: #1d1a2c;
+  outline-width: 1px;
+  outline-color: white;
+  outline-style: solid;
+  display: inline-block;
+  white-space: nowrap;
+  color: white;
+  font-size: 16px;
+  min-height: 24px;
+  transition: outline 0.1s ease, color 0.1s ease;
+}
+
+.nicebutton:hover {
+  outline-color: #fd9183;
+  color: #fd9183;
+  transition: outline 0.25s ease, color 0.25s ease;
+  cursor: pointer;
+}
+
+.nicebutton:active:hover {
+  outline-color: white;
+  color: white;
+  transition: outline 0.1s ease, color 0.1s ease;
+  cursor: pointer;
+}
+
+
+.nicebutton > p {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  transition: color 0.1s ease;
+}
+
+.nicebutton:hover > p {
+  outline-color: #fd9183;
+  color: #fd9183;
+  transition: color 0.25s ease;
+  cursor: pointer;
+}
+
+.nicebutton:active:hover > p {
+  outline-color: white;
+  color: white;
+  transition: color 0.1s ease;
+  cursor: pointer;
+}
+
+
 .fishbutton {
   font-family: Arial;
-  max-width: calc(49.75% - 64px);
-  min-width: calc(49.75% - 64px);
+  max-width: calc(49.75%);
+  min-width: calc(49.75%);
   height: 36px;
   border: none;
   cursor: pointer;
@@ -385,65 +444,60 @@ html,body{min-height:100%;}
   white-space: nowrap;
   color: white;
   font-size: 16px;
+  transition: outline 0.1s ease;
 }
 
 .fishbutton:hover {
-  background-color: #d35040;
-  transition: background 0.2s ease;
+  outline-color: #fd9183;
+  color: #fd9183;
+  transition: outline 0.25s ease;
   cursor: pointer;
 }
 
 .fishbutton:active:hover {
-  background-color: #1d1a2c;
-  transition: background 0.1s ease;
+  outline-color: white;
+  color: white;
+  transition: outline 0.1s ease;
   cursor: pointer;
 }
 
-.unclebutton {
-  font-family: Arial;
-  min-width: 200px;
-  height: 36px;
-  border: none;
+.fishbutton:hover > p {
+  outline-color: #fd9183;
+  color: #fd9183;
+  transition: color 0.25s ease;
   cursor: pointer;
-  text-align: center;
-  border-radius: 6px 6px 6px 6px;
-  background-color: #1d1a2c;
+}
+
+.fishbutton:active:hover > p {
+  outline-color: white;
+  color: white;
+  transition: color 0.1s ease;
+  cursor: pointer;
+}
+
+
+input {
+  font-family: Arial;
+  border: none;
+  cursor: text;
+  border-radius: 1px 1px 1px 1px;
+  background-color: rgb(29, 26, 44);
   outline-width: 1px;
   outline-color: white;
   outline-style: solid;
   display: inline-block;
   white-space: nowrap;
   color: white;
+  width: 200px;
+  height: 24px;
   font-size: 16px;
+  transition: outline 0.1s ease, color 0.1s ease;
 }
 
-.unclebutton:hover {
-  background-color: #d35040;
-  transition: background 0.2s ease;
-  cursor: pointer;
-}
-
-.unclebutton:active:hover {
-  background-color: #1d1a2c;
-  transition: background 0.1s ease;
-  cursor: pointer;
-}
-
-.shopbutton {
-  font-family: Arial;
-  width: 128px;
-  height: 128px;
-  border: none;
-  cursor: pointer;
-  text-align: center;
-  background-color: #1d1a2c;
-  outline-width: 1px;
-  outline-color: white;
-  outline-style: solid;
-  display: inline-block;
-  white-space: nowrap;
-  color: white;
-  font-size: 16px;
+input:focus {
+  transition: outline 0.25s ease, color 0.25s ease;
+  outline-color: #fd9183;
+  color: #fd9183;
 }
 
 .leaderboards {
@@ -485,55 +539,10 @@ ol {
 li {
   font-family: Arial;
   color: white;
-  font-size: calc(1.33vw + 4px);
+  font-size: calc(1vw + 2px);
   margin-left: -30px;
 }
 
-.nicebutton {
-  font-family: Arial;
-  border: none;
-  cursor: pointer;
-  text-align: center;
-  border-radius: 4px 4px 4px 4px;
-  background-color: #1d1a2c;
-  outline-width: 1px;
-  outline-color: white;
-  outline-style: solid;
-  display: inline-block;
-  white-space: nowrap;
-  color: white;
-  font-size: 16px;
-  min-height: 24px;
-}
-
-.nicebutton:hover {
-  background-color: #d35040;
-  transition: background 0.2s ease;
-  cursor: pointer;
-}
-
-.nicebutton:active:hover {
-  background-color: #1d1a2c;
-  transition: background 0.1s ease;
-  cursor: pointer;
-}
-
-input {
-  font-family: Arial;
-  border: none;
-  cursor: text;
-  border-radius: 1px 1px 1px 1px;
-  background-color: rgb(29, 26, 44);
-  outline-width: 1px;
-  outline-color: white;
-  outline-style: solid;
-  display: inline-block;
-  white-space: nowrap;
-  color: white;
-  width: 200px;
-  height: 24px;
-  font-size: 16px;
-}
 
 .shop {
   background-color: #1d1a2c;
@@ -1020,32 +1029,6 @@ input:checked + .slider:before {
   display: inline-block;
 }
 
-.nicebutton > img {
-  filter: brightness(100%);
-  transition: filter 0.2s ease;
-  pointer-events: none;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.nicebutton:hover > img {
-  filter: brightness(1000%);
-  transition: filter 0.2s ease;
-}
-
-.nicebutton > p {
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
 .viewprofile {
   background-color: #1d1a2c;
   min-width: 502%;
@@ -1176,4 +1159,28 @@ input:checked + .slider:before {
   max-height: 412px;
   z-index: 100;
   overflow-y: hidden;
+}
+
+.unblocked {
+  font-size: 16px; 
+  color:white; 
+  text-decoration: none; 
+  background-color: #1d1a2c; 
+  outline-width: 1px; 
+  outline-style: solid; 
+  outline-color: white; 
+  outline-offset: 2px; 
+  border-radius: 1px;
+  transition: outline 0.1s ease, color 0.1s ease;
+  font-weight: 240;
+  color: white;
+  font-family: Arial;
+  line-height: 120%;
+  max-width: 85%;
+}
+
+.unblocked:hover {
+  transition: outline 0.25s ease, color 0.25s ease;
+  outline-color: #fd9183; 
+  color: #fd9183; 
 }

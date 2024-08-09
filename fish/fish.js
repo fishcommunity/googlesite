@@ -29,6 +29,30 @@ function delay(time) {
     return new Promise(resolve => setTimeout(resolve, time));
 }
 
+function checkIfLoggedIn() {
+    const data = {
+        "username": getCookie("username"),
+        "loginKey": getCookie("loginKey")
+    };
+    fetch('https://traoxfish.eu-4.evennode.com/checkkey', {
+        method: 'POST',
+        credentials: "same-origin",
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    }).then(response => {
+        return response.json();
+    }).then(json => {
+        if (json.validKey == "true") {
+            window.location.replace("/fish/fish");
+        }
+    });
+
+}
+
+checkIfLoggedIn()
+
 function createAccount() {
 
     var username = document.getElementById("username").value
@@ -39,7 +63,7 @@ function createAccount() {
         "password": password,
         "browserKey": getCookie("browserKey")
     };
-    fetch('https://traoxfish.us-3.evennode.com/register', {
+    fetch('https://traoxfish.eu-4.evennode.com/register', {
         method: 'POST',
         credentials: "same-origin",
         headers: {
@@ -77,7 +101,7 @@ function login() {
         "password": password,
         "browserKey": getCookie("browserKey")
     };
-    fetch('https://traoxfish.us-3.evennode.com/login', {
+    fetch('https://traoxfish.eu-4.evennode.com/login', {
         method: 'POST',
         credentials: "same-origin",
         headers: {
@@ -107,7 +131,7 @@ function loginGuest() {
         "username": "guest",
         "password": "guest1"
     };
-    fetch('https://traoxfish.us-3.evennode.com/login', {
+    fetch('https://traoxfish.eu-4.evennode.com/login', {
         method: 'POST',
         credentials: "same-origin",
         headers: {

@@ -43,125 +43,21 @@
         <h1 id="profile-username" style="display: inline-block; transform: translate(0, -48px); margin-left: 12px; font-size: 250%;">Loading...</h1>
 	      <p id="profile-rank" style="display: flex; position: absolute; transform: translate(0, -90px); margin-left: 180px; font-size: 75%;"></p>
         <button id="openfriends" onclick="openFriends()" class="nicebutton" style="position: absolute; display: none; margin-left: 180px; margin-top: -58px;">Friends</button>
-        <button id="createguildbutton" onclick="openCreateGuild()" class="nicebutton" style="position: absolute; display: none; margin-left: 260px; margin-top: -58px;">Create Guild</button>
-        <button id="openguild" onclick="openGuild()" class="nicebutton" style="position: absolute; display: none; margin-left: 260px; margin-top: -58px;">Open Guild</button>
-        <button id="openguildinvitesbutton" onclick="openGuildInvites()" class="nicebutton" style="position: absolute; display: none; margin-left: 365px; margin-top: -58px;">Guild Invites</button>
-        <button id="invitetoguildbutton" class="nicebutton" style="position: absolute; display: none; margin-left: 650px; margin-top: -58px;">Invite to Guild</button>
         <button id="addfriend" class="nicebutton" style="position: absolute; display: none; margin-left: 180px; margin-top: -58px;">Send Friend Request</button>
-        <button id="sendchallengerequest" class="nicebutton" style="position: absolute; display: none; margin-left: 360px; margin-top: -58px;">Send Challenge Request</button>
-        <input id="challengebet" type="text" autocomplete="transaction-amount" placeholder="Bet" style="position: absolute; display: none; margin-left: 525px; margin-top: -58px; height: 22px; width: 76px;">
-        <p id="challengeinfo" style="position: absolute; display: block; margin-left: 320px; margin-top: -32px; height: 22px; width: 100%; font-size: 14px;"></p>
         <div class="longbarseperator" style="display: inline-block; transform: translate(0, -24px); position: initial;"></div>
         <div style="margin-left: 32px; transform: translate(0, -12px); position: relative; max-width: 46%; width: 46%; display: inline-block;">
           <p id="profile-fish" style="line-height: 3px; font-size: 15px;">Fish: Loading...</p>
-          <p id="profile-rarefish" style="line-height: 3px; font-size: 15px;">Rare Fish: Loading...</p>
-          <p id="profile-veryrarefish" style="line-height: 3px; font-size: 15px;">Very Rare Fish: Loading...</p>
-          <p id="profile-sharks" style="line-height: 3px; font-size: 15px;">Sharks: Loading...</p>
-          <p id="profile-raresharks" style="line-height: 3px; font-size: 15px;">Rare Sharks: Loading...</p>
-          <p id="profile-whales" style="line-height: 3px; font-size: 15px;">Whales: Loading...</p>
-          <p id="profile-specialfish" style="line-height: 3px; font-size: 15px;">Special Fish: Loading...</p>
           <p id="profile-alltimefish" style="line-height: 3px; font-size: 15px;">All Time Fish: Loading...</p>
           <p id="profile-fishgambled" style="line-height: 3px; font-size: 15px;">Fish Gambled: Loading...</p>
-          <p id="profile-fishermen" style="line-height: 3px; font-size: 15px;">Fishermen: Loading...</p>
-          <p id="profile-chum" style="line-height: 3px; font-size: 15px;">Chum: Loading...</p>
-          <p id="profile-fishbuckets" style="line-height: 3px; font-size: 15px;">Fish Buckets: Loading...</p>
           <br>
           <p id="profile-fishperclick" style="line-height: 3px; font-size: 15px;">Fish Per Click: Loading...</p>
-          <p id="profile-fishpersecond" style="line-height: 3px; font-size: 15px;">Fish Per Second: Loading...</p>
         </div>
         <div class="navseperator" style="height: 59.75%; margin-top: -27px; margin-left: 0px;"></div>
-        <div style="margin-left: 32px; transform: translate(0, -182px); position: relative; max-width: 42%; width: 42%; display: inline-block; align-items:start;">
+        <div style="margin-left: 32px; transform: translate(0, -46px); position: relative; max-width: 42%; width: 42%; display: inline-block; align-items:start;">
           <p id="profile-joindate" style="line-height: 3px; font-size: 15px;">Join Date: Loading...</p>
           <p id="profile-lastonline" style="line-height: 3px; font-size: 15px;">Last Online: Loading...</p>
           <p id="profile-playtime" style="line-height: 3px; max-width: 200%; font-size: 15px;">Playtime: Loading...</p>
           <p id="profile-friends" style="line-height: 3px; font-size: 15px;">Friends: Loading...</p>
-          <br>
-          <p id="profile-guild" style="line-height: 3px; font-size: 15px;">Guild: Loading...</p>
-        </div>
-
-        <div onclick="closeCreateGuild()" id="createguildbackground" style="display: none; position: absolute; min-width: 100%; min-height: 100%; transform: translate(20%, -500px); ">
-          <div onclick="event.stopPropagation()" style="display: block; background-color: #1d1a2c; min-width: 50%; min-height: 50%; position: absolute; outline-style: solid; outline-width: 1px; outline-color: #ffffff; margin-left: auto; margin-right: auto; transform: translate(16.6%, 16.6%);">
-            <p class="center" style="font-size: 26px;">Create Guild</p>
-            <br>
-            <p class="center" style="margin-top: 54px;">Cost: 50 Special Fish</p>
-            <p class="center" style="margin-top: 84px; font-size: 18px;">Requirement: Level 50</p>
-            <div class="longbarseperator" style="margin-top: 20px;"></div>
-            <input type="text" autocomplete="cc-name" id="createguildname" name="name" class="sendfish" placeholder="Guild Name" style="margin-left: 25%; margin-top: 30%; width: calc(50% - 4px);"><br>
-            <button onclick="createGuild()" class="nicebutton" style="margin-left: 25%; margin-top: 2.5%; width: 50%;">Create Guild</button>
-            <p id="guildcreatestatus" style="margin-left: 25%; font-size: 14px; max-width: 50%;"></p>
-          </div>
-        </div>
-
-        <div onclick="closeGuildInvites()" id="guildinvitesbackground" style="display: none; position: absolute; min-width: 100%; min-height: 100%; transform: translate(20%, -500px); ">
-          <div onclick="event.stopPropagation()" style="display: block; background-color: #1d1a2c; min-width: 50%; min-height: 50%; max-height: 50%; position: absolute; outline-style: solid; outline-width: 1px; outline-color: #ffffff; margin-left: auto; margin-right: auto; transform: translate(16.6%, 16.6%); overflow-y: scroll;">
-            <p class="center" style="font-size: 26px;">Guild Invites</p>
-            <div class="longbarseperator" style="margin-top: 20px;"></div>
-            <div id="guildinvites" style="margin-top: 42px;">
-              <p class="frienditem" style="margin-left: 4px;">Loading...</p>
-            </div>
-          </div>
-        </div>
-
-        <div onclick="closeGuild()" id="guildbackground" style="display: none; position: absolute; min-width: 100%; min-height: 640px; transform: translate(0, -580px); ">
-          <div onclick="event.stopPropagation()" style="display: block; background-color: #1d1a2c; min-width: 75%; min-height: 75%; position: absolute; outline-style: solid; outline-width: 1px; outline-color: #ffffff; margin-left: auto; margin-right: auto; transform: translate(16.6%, 16.6%);">
-            <p id="guildname" class="center" style="font-size: 26px;">Loading...</p>
-            <br>
-            <div class="longbarseperator" style="margin-top: 20px;"></div>
-            <div style="width: 49%; height: 100%; min-height: 100%; margin-top: 20px; display: inline-block; position: aboslute; ">
-              <div style="width: 100%; min-height: 180px; height: 180px;">
-                <p id="guildowner" style="margin-left: 12px; line-height: 8px; font-size: 18px;">Guild Owner: Loading...</p>
-                <p id="guildlevel" style="margin-left: 12px; line-height: 8px;">Level: Loading...</p>
-                <div style="margin-bottom: 0px; line-height: 18px; margin-left: 4px;">
-                  <div class="xpbar" style="line-height: 0px; min-width: calc(50% - 24px); margin-left: 8px; margin-top: -6px;">
-                      <div id="guildxpcolor" style="display: inline-flex; position: relative; width: 0%; max-width: 100%; min-height: 24px; background-color: #d35040;"></div>
-                      <p id="guildxpcount" class="center" style="margin-top: 12px; font-size: 12px; max-width: 400%;">XP: 0 / 0</p>
-                  </div>
-                 </div>
-                <p id="guildjoinsettingtext" style="margin-left: 12px; line-height: 8px; margin-top: 48px;">Join Setting: Loading...</p>
-                <select name="type" id="guildjoinsetting" onchange="setGuildJoinSetting()" class="leaderboardselect" style="display: none; margin-left: 6px; width: calc(100% - 10px); min-width: calc(100% - 10px); height: 28px; font-size: 16px; margin-top: 0px;">
-                  <option value="everyone">Everyone</option>
-                  <option value="request only">Request to Join</option>
-                  <option value="invite only">Invite Only</option>
-                </select>
-                <div id="guildrequestnotifications" style="display: none; position: absolute; width: 100%;">
-                  <img src="../images/red_dot.png" style="position: absolute; display: block; width: 20px; margin-left: calc(50% - 22px); z-index: 2; margin-top: 2px;">
-                  <p id="guildrequestnotificationcount" style="z-index: 2; display: inline-block; position: absolute; margin-left: calc(50% - 17px); margin-top: 1px;">1</p>
-                </div>
-                <button id="guildjoinrequestsbutton" onclick="openGuildRequests()" class="nicebutton" style="display: none; margin-left: 6px; margin-top: 12px; width: calc(100% - 10px); min-width: calc(100% - 10px); height: 42px;">Join Requests</button>
-                <button id="guildjoinbutton" class="nicebutton" style="display: none; margin-left: 6px; margin-top: 12px; width: calc(100% - 10px); min-width: calc(100% - 10px); height: 42px;">Join Guild</button>
-              </div>
-              <div class="longbarseperator" style="display: block; position: relative;"></div>
-              <div style="width: 100%; min-height: 180px; height: 180px;">
-                <p style="margin-left: 12px; line-height: 8px; margin-top: 30px;">Upgrades:</p>
-                <div class="longbarseperator" style="position: relative; margin-top: -24px; min-width: calc(100% - 14px); margin-left: 6px;"></div>
-                <br>
-                <p id="guildfish" style="margin-left: 12px; line-height: 8px; font-size: 16px;">Guild Fish: Loading...</p>
-                <div id="guilddepositguildfish" style="display: none;">
-                  <button onclick="depositGuildFish()" class="nicebutton" style="font-size: 12px; margin-left: 12px;">Deposit Guild Fish</button> <div style="display: inline-block; position: absolute; margin-left: 12px; margin-top: -14px;"><p style="font-size: 12px; max-width: 66%;">Cost: 1 Special Fish</p></div> 
-                </div>
-                <div class="longbarseperator" style="position: relative; margin-top: -6px; min-width: calc(100% - 14px); margin-left: 6px;"></div>
-                <p id="guildmemberlimitupgrade" style="margin-left: 12px; margin-top: 32px; line-height: 10px; font-size: 13px;">Member Limit: Loading...</p> <div id="guildmemberlimitupgradebutton" style="display: none; position: absolute; margin-top: -30px;"><button onclick="purchaseGuildUpgrade('memberLimit')" id="guildmemberlimitupgradecost" class="nicebutton" style="font-size: 10px; margin-left: 126%; max-height: 18px; min-height: 18px; max-width: 125px; min-width: 125px;">Upgrade (100 Guild Fish)</button></div>
-                <p id="guildfishperclickupgrade" style="margin-left: 12px; line-height: 10px; font-size: 13px;">Fish Per Click: Loading...</p>  <div id="guildfishperclickupgradebutton" style="display: none; position: absolute; margin-top: -30px;"><button onclick="purchaseGuildUpgrade('fishPerClick')" id="guildfishperclickupgradecost" class="nicebutton" style="font-size: 10px; margin-left: 126%; max-height: 18px; min-height: 18px; max-width: 125px; min-width: 125px;">Upgrade (100 Guild Fish)</button></div>
-                <p id="guildfishpersecondupgrade" style="margin-left: 12px; line-height: 10px; font-size: 13px;">Fish Per Second: Loading...</p>  <div id="guildfishpersecondupgradebutton" style="display: none; position: absolute; margin-top: -30px;"><button onclick="purchaseGuildUpgrade('fishPerSecond')" id="guildfishpersecondupgradecost" class="nicebutton" style="font-size: 10px; margin-left: 126%; max-height: 18px; min-height: 18px; max-width: 125px; min-width: 125px;">Upgrade (100 Guild Fish)</button></div>
-              </div>
-            </div>
-            <div class="navseperator" style="position: aboslute; min-height: calc(100% - 50px); height: calc(100% - 50px); margin-top: 22px;"></div>
-            <div style="width: 49%; height: 100%; margin-top: 20px; display: inline; position: absolute;">
-              <p id="guildmembercount" style="margin-left: 12px; line-height: 8px;">Members: Loading...</p>
-              <div id="guildmemberslist" style="width: calc(100% - 16px); height: calc(100% - 148px); outline-color: #ffffff; outline-style: solid; outline-width: 1px; margin-left: 14px; padding-top: 2px; overflow-y: scroll;">
-                <p class="frienditem" style="margin-left: 4px;">Loading...</p>
-              </div>
-              <div class="longbarseperator" style="position: relative; margin-left: 10px; margin-top: -6px;"></div>
-              <button id="guildleavebutton" onclick="leaveGuild()" class="nicebutton" style="margin-left: 12px; margin-top: 24px; width: calc(100% - 14px); max-width: calc(100% - 14px); min-width: calc(100% - 14px); min-height: 24px; max-height: 24px;">Leave Guild</button>
-            </div>
-
-            <div onclick="closeGuildRequests()" id="guildrequestsbackground" style="display: none; position: absolute; min-width: 100%; min-height: 100%; transform: translate(0, -452px); z-index: 3;">
-              <div id="guildrequests" onclick="event.stopPropagation()" style="display: block; background-color: #1d1a2c; min-width: 50%; min-height: 50%; position: absolute; outline-style: solid; outline-width: 1px; outline-color: #ffffff; margin-left: auto; margin-right: auto; transform: translate(50%, 33%); overflow-y: scroll;">
-                <p class="frienditem" style="margin-left: 4px;">Loading...</p>
-              </div>
-            </div>
-
-          </div>
         </div>
 
         <div onclick="closeFriends()" id="friendsbackground" style="display: none; min-width: 100%; min-height: 100%; position: absolute; transform: translate(0, -500px);">
@@ -214,21 +110,15 @@
           </div>
         </div>
 
-        <div onclick="closeSettings()" id="profilesettingsbackground" style="display: none; position: absolute; min-width: 100%; min-height: 100%; transform: translate(0, -500px);">
+        <div onclick="closeSettings()" id="profilesettingsbackground" style="display: none; position: absolute; min-width: 100%; min-height: 100%; transform: translate(0, -350px);">
           <div onclick="event.stopPropagation()" style="display: block; background-color: #1d1a2c; min-width: 75%; min-height: 75%; position: absolute; outline-style: solid; outline-width: 1px; outline-color: #ffffff; margin-left: auto; margin-right: auto; transform: translate(16.6%, 16.6%);">
-            <p style="position: absolute; display: inline-block; margin-left: 24.5%; margin-top: 108px;">Change Password:</p>
-            <input type="password" id="changepasswordold" class="center" placeholder="Old Password" style="display: inline-block; position: inital; min-width: 50%; margin-top:148px;">
-            <input type="password" id="changepasswordnew" class="center" placeholder="New Password" style="display: inline-block; position: inital;  min-width: 50%; margin-top:188px;">
-            <input type="password" id="changepasswordnewconfirm" class="center" placeholder="Confirm New Password" style="display: inline-block; position: inital; min-width: 50%; margin-top:228px;">
-            <button onclick="changePassword()" class="nicebutton center" style="min-width: 50%; margin-top: 268px;">Change Password</button>
+            <p style="position: absolute; display: inline-block; margin-left: 24.5%; margin-top: 58px;">Change Password:</p>
+            <input type="password" id="changepasswordold" class="center" placeholder="Old Password" style="display: inline-block; position: inital; min-width: 50%; margin-top:98px;">
+            <input type="password" id="changepasswordnew" class="center" placeholder="New Password" style="display: inline-block; position: inital;  min-width: 50%; margin-top:138px;">
+            <input type="password" id="changepasswordnewconfirm" class="center" placeholder="Confirm New Password" style="display: inline-block; position: inital; min-width: 50%; margin-top:178px;">
+            <button onclick="changePassword()" class="nicebutton center" style="min-width: 50%; margin-top: 218px;">Change Password</button>
             <p id="changepasswordstatus" style="position: absolute; display: inline-block; margin-left: 24.5%; margin-top: 288px; font-size: 16px; max-width: 50%;"> </p>
-            <button onclick="logout()" class="nicebutton center" style="min-width: 50%; margin-top: 348px;">Logout</button>
-            <p style="position: absolute; display: inline-block; margin-left: 24.5%; margin-top: 28px;">Who can send you challenges:</p>
-            <select name="type" id="challengesetting" onchange="setChallengeSetting()" class="leaderboardselect" style="margin-left: 24.5%; width: 51%; min-width: 51%; max-width: 51%; height: 28px; font-size: 16px; margin-top: 60px;">
-              <option value="everyone">Everyone</option>
-              <option value="friends">Only Friends</option>
-              <option value="noone">No one</option>
-            </select>
+            <button onclick="logout()" class="nicebutton center" style="min-width: 50%; margin-top: 328px;">Logout</button>
           </div>
         </div>
         
@@ -265,140 +155,7 @@
     </div>
   </div>
 
-   <div class="shop" onclick="closeShop()" id="shop">
-    <div class="rarefishinfo" id="rarefishinfo">
-        <h2 class="shoptitle" style="margin-bottom: 0px;"> Shop</h2>
-        <div class="longbarseperator" style="margin-top: 72px;"> </div>
-        <p style="margin-left: 8px; margin-top: 26px; min-width: 66%; display: inline-block;"> Item</p>
-        <div class="navseperator" style="max-height: 16px; margin-top: 27px; display: inline-block;"></div>
-        <p style="margin-left: 8px; margin-top: 26px; display: inline-block;"> Cost</p>
-        <br style="line-height: 0px;">
-        <div class="navseperator" style="min-height: calc(100% + 22px); left: 68.35%; margin-top: -12px; display: absolute"></div>
 
-        <div class="longbarseperator" style="margin-top: 100px;"> </div>
-        <p style="margin-left: 8px; margin-top: -24px; min-width: 66%; display: inline-block;">Rare Fish</p>
-        <p style="margin-left: 8px; margin-top: -26px; display: inline;" id="rarefishcost"> Loading...</p>
-        <div class="longbarseperator" style="margin-top: 140px; max-width: 66.6%; min-width: 66.6%; margin-left: 7px;"> </div>
-        <p style="margin-left: 8px; margin-top: -26px; min-width: 66%; display: inline-block; color: #bbbbbb; font-size: 14px;"> Get 1 extra fish per click.</p>
-        <button class="nicebutton" style="display: inline; width: calc(29% - 64px); margin-left: 9px; height: 46px; margin-top: -10px;" onclick="buyItem('rareFish')"> Buy</button>
-        <input id="rarefishbuyquantity" value="1" style="display: inline-block; position: absolute; width: 48px; height: 44px; margin-top: -10px; margin-left: 8px; text-align: center;">
-        <div class="longbarseperator" style="margin-top: 200px;"> </div>
-
-        <br><br>
-
-        <div class="longbarseperator" style="margin-top: 300px;"> </div>
-        <p style="margin-left: 8px; margin-top: 2px; min-width: 66%; display: inline-block;">Very Rare Fish</p>
-        <p style="margin-left: 8px; margin-top: -26px; display: inline;" id="veryrarefishcost"> Loading...</p>
-        <div class="longbarseperator" style="margin-top: 240px; max-width: 66.6%; min-width: 66.6%; margin-left: 7px;"> </div>
-        <p style="margin-left: 8px; margin-top: -26px; min-width: 66%; display: inline-block; color: #bbbbbb; font-size: 14px;"> Get 1% extra fish per click.</p>
-        <button class="nicebutton" style="display: inline; width: calc(29% - 64px); margin-left: 9px; height: 46px; margin-top: -10px;" onclick="buyItem('veryRareFish')"> Buy</button>
-        <input id="veryrarefishbuyquantity" value="1" style="display: inline-block; position: absolute; width: 48px; height: 44px; margin-top: -10px; margin-left: 8px; text-align: center;">
-
-        <br><br>
-
-        <p style="margin-left: 8px; margin-top: 2px; min-width: 66%; display: inline-block;">Shark</p>
-        <p style="margin-left: 8px; margin-top: -26px; display: inline;" id="sharkcost"> Loading...</p>
-        <div class="longbarseperator" style="margin-top: 340px; max-width: 66.6%; min-width: 66.6%; margin-left: 7px;"> </div>
-        <p style="margin-left: 8px; margin-top: -26px; min-width: 66%; display: inline-block; color: #bbbbbb; font-size: 14px;"> Get 1 fish per second, even when offline.</p>
-        <button class="nicebutton" style="display: inline; width: calc(29% - 64px); margin-left: 9px; height: 46px; margin-top: -10px;" onclick="buyItem('shark')"> Buy</button>
-        <input id="sharkbuyquantity" value="1" style="display: inline-block; position: absolute; width: 48px; height: 44px; margin-top: -10px; margin-left: 8px; text-align: center;">
-
-        <div class="longbarseperator" style="margin-top: 400px;"> </div>
-
-        <br><br>
-
-        <p style="margin-left: 8px; margin-top: 2px; min-width: 66%; display: inline-block;">Rare Shark</p>
-        <p style="margin-left: 8px; margin-top: -26px; display: inline;" id="raresharkcost"> Loading...</p>
-        <div class="longbarseperator" style="margin-top: 440px; max-width: 66.6%; min-width: 66.6%; margin-left: 7px;"> </div>
-        <p style="margin-left: 8px; margin-top: -26px; min-width: 66%; display: inline-block; color: #bbbbbb; font-size: 14px;"> Get 6% extra fish from sharks.</p>
-        <button class="nicebutton" style="display: inline; width: calc(29% - 64px); margin-left: 9px; height: 46px; margin-top: -10px;" onclick="buyItem('rareShark')"> Buy</button>
-        <input id="raresharkbuyquantity" value="1" style="display: inline-block; position: absolute; width: 48px; height: 44px; margin-top: -10px; margin-left: 8px; text-align: center;">
-
-        <div class="longbarseperator" style="margin-top: 500px;"> </div>
-      
-        <br><br>
-
-        <p style="margin-left: 8px; margin-top: 2px; min-width: 66%; display: inline-block;">Whale</p>
-        <p style="margin-left: 8px; margin-top: -26px; display: inline;" id="whalecost"> Loading...</p>
-        <div class="longbarseperator" style="margin-top: 540px; max-width: 66.6%; min-width: 66.6%; margin-left: 7px;"> </div>
-        <p style="margin-left: 8px; margin-top: -26px; min-width: 66%; display: inline-block; color: #bbbbbb; font-size: 14px;"> Doubles your fish per click and from sharks.</p>
-        <button class="nicebutton" style="display: inline; width: calc(29% - 64px); margin-left: 9px; height: 46px; margin-top: -10px;" onclick="buyItem('whale')"> Buy</button>
-
-    </div>
- </div>
-
- <div class="fishingboatshop" onclick="closeFishingBoatShop()" id="fishingboatshop">
-  <div onclick="event.stopPropagation()" class="fishingboatshopbackground">
-      <h2 class="shoptitle" style="margin-bottom: 0px;">Fishing Boat Shop</h2>
-      <div class="longbarseperator" style="margin-top: 72px;"> </div>
-      <p style="margin-left: 8px; margin-top: 26px; min-width: 66%; display: inline-block;"> Item</p>
-      <div class="navseperator" style="max-height: 16px; margin-top: 27px; display: inline-block;"></div>
-      <p style="margin-left: 8px; margin-top: 26px; display: inline-block;"> Cost</p>
-      <br style="line-height: 0px;">
-      <div class="navseperator" style="min-height: calc(100% + 22px); left: 68.35%; margin-top: -12px; display: absolute"></div>
-
-      <div class="longbarseperator" style="margin-top: 100px;"> </div>
-      <p style="margin-left: 8px; margin-top: -24px; min-width: 66%; display: inline-block;">Fisherman</p>
-      <p style="margin-left: 8px; margin-top: -26px; display: inline;" id="fishermancost"> Loading...</p>
-      <div class="longbarseperator" style="margin-top: 140px; max-width: 66.6%; min-width: 66.6%; margin-left: 7px;"> </div>
-      <p style="margin-left: 8px; margin-top: -26px; min-width: 66%; display: inline-block; color: #bbbbbb; font-size: 14px;">Your fishing boat will gain 2 fish per second</p>
-      <button class="nicebutton" style="display: inline; width: calc(29% - 64px); margin-left: 9px; height: 46px; margin-top: -10px;" onclick="buyItem('fisherman')"> Buy</button>
-      <input id="fishermanbuyquantity" value="1" style="display: inline-block; position: absolute; width: 48px; height: 44px; margin-top: -10px; margin-left: 8px; text-align: center;">
-      <div class="longbarseperator" style="margin-top: 200px;"> </div>
-
-      <br><br>
-
-      <div class="longbarseperator" style="margin-top: 300px;"> </div>
-      <p style="margin-left: 8px; margin-top: 2px; min-width: 66%; display: inline-block;">Chum</p>
-      <p style="margin-left: 8px; margin-top: -26px; display: inline;" id="chumcost"> Loading...</p>
-      <div class="longbarseperator" style="margin-top: 240px; max-width: 66.6%; min-width: 66.6%; margin-left: 7px;"> </div>
-      <p style="margin-left: 8px; margin-top: -26px; min-width: 66%; display: inline-block; color: #bbbbbb; font-size: 14px;">Your fishing boat will gain 5% extra fish per second.</p>
-      <button class="nicebutton" style="display: inline; width: calc(29% - 64px); margin-left: 9px; height: 46px; margin-top: -10px;" onclick="buyItem('chum')"> Buy</button>
-      <input id="chumbuyquantity" value="1" style="display: inline-block; position: absolute; width: 48px; height: 44px; margin-top: -10px; margin-left: 8px; text-align: center;">
-
-      <br><br>
-
-      <p style="margin-left: 8px; margin-top: 2px; min-width: 66%; display: inline-block;">Fish Bucket</p>
-      <p style="margin-left: 8px; margin-top: -26px; display: inline;" id="fishbucketcost"> Loading...</p>
-      <div class="longbarseperator" style="margin-top: 340px; max-width: 66.6%; min-width: 66.6%; margin-left: 7px;"> </div>
-      <p style="margin-left: 8px; margin-top: -26px; min-width: 66%; display: inline-block; color: #bbbbbb; font-size: 14px;">Increases your fishing boat's capacity by 1M</p>
-      <button class="nicebutton" style="display: inline; width: calc(29% - 64px); margin-left: 9px; height: 46px; margin-top: -10px;" onclick="buyItem('fishBucket')"> Buy</button>
-      <input id="fishbucketbuyquantity" value="1" style="display: inline-block; position: absolute; width: 48px; height: 44px; margin-top: -10px; margin-left: 8px; text-align: center;">
-  </div>
-</div>
-
- <div onclick="closeFishingBoat()" id="fishingboat" class="fishingboat">
-    <div onclick="event.stopPropagation()" class="fishingboatbackground">
-      <h2 class="center" style="margin-top: 28px;">Fishing Boat</h2>
-      <div class="longbarseperator" style="margin-top: 42px;"></div>
-      <div class="fishbar" style="display: inline-block; position: relative; margin-top: 72px; min-width:75%; margin-left: 12.5%;">
-        <p class="fishtype" style="max-width: 30%; min-width: 30%; font-size: 12px;">Fishermen</p>
-        <div class="navseperator" style="max-height: 33px; top:-1px"></div>
-        <p class="fishtype" style="max-width: 30%; min-width: 30%; font-size: 12px;">Chum</p>
-        <div class="navseperator" style="max-height: 33px; top:-1px"></div>
-        <p class="fishtype" style="max-width: 30%; min-width: 30%; font-size: 12px;">Fish Buckets</p>
-
-        <div class="longbarseperator" style="position: relative; margin-top: -16px"></div>
-
-        <p class="fishdata" id="fishermancount" style="max-width: 30%; min-width: 30%; margin-top: 24px;">Loading...</p>
-        <p class="fishdata" id="chumcount" style="max-width: 30%; min-width: 30%; margin-top: 24px;">Loading...</p>
-        <p class="fishdata" id="fishbucketcount" style="max-width: 30%; min-width: 30%; margin-top: 24px;">Loading...</p>
-
-      </div>
-      <button onclick="openFishingBoatShop()" class="nicebutton" style="width: 75%; margin-left: 12.5%; margin-top: 8px;">Open Fishing Boat Shop</button>
-      <img draggable="false" class="unselectable" src="../images/fishing_boat.gif" style="margin-left: 37%; width: 25%; filter: brightness(999); margin-top: 56px;">
-      <div style="width: 33%; height: 72px; outline-style: solid; outline-color: #ffffff; outline-width: 1px; margin-left: 33%;">
-        <p id="fishingboatamount" style="min-width: 100%; text-align: center; font-size: 16px;">Fish: 100k / 1M</p>
-        <div class="longbarseperator" style="position: relative; margin-top: -30px;"></div>
-        <button onclick="collectFishingBoatFish()" class="nicebutton" style="min-width: 96%; margin-left: 2%; margin-top: 20px; min-height: 34px;">Collect Fish</button>
-      </div>
-    </div>
- </div>
-
-  <div class="shop" onclick="closeLogsBg()" id="logsbg">
-    <div onclick="event.stopPropagation()" class="sendlogs" id="sendlogs"></div>
-  </div>
- 
    <br><br>
 
    <div class="leaderboards">
@@ -407,13 +164,7 @@
     <select name="type" id="leaderboardtype" class="leaderboardselect" style="transform: translate(0, -2px);">
       <option value="fish">Fish</option>
       <option value="alltimefish">All Time Fish</option>
-      <option value="rarefish">Rare Fish</option>
-      <option value="veryrarefish">Very Rare Fish</option> 
-      <option value="sharks">Sharks</option>
-      <option value="raresharks">Rare Sharks</option>
       <option value="amountgambled">Fish Gambled</option>
-      <option value="specialfish">Special Fish</option>
-      <option value="whales">Whales</option>
     </select>
 
     <div style="background-color: #1d1a2c; width: 5vw; height: calc(1.4vw + 3px); display: inline-block; transform: translate(0, 0.2vw); outline-style: solid; outline-color: #ffffff; outline-width: 1px; margin-left: 6px;">
@@ -451,29 +202,12 @@
    <div class="fishbar"> 
     <p class="fishtype" style="max-width: 9%; min-width: 60px;">Fish</p>
     <div class="navseperator" style="max-height: 33px; top:-1px"></div>
-    <p class="fishtype" style="max-width: 8%; min-width: 55px;">Rare Fish</p>
-    <div class="navseperator" style="max-height: 33px; top:-1px"></div>
-    <p class="fishtype">Very Rare Fish</p>
-    <div class="navseperator" style="max-height: 33px; top:-1px"></div>
-    <p class="fishtype" style="max-width: 9%; min-width: 60px;">Sharks</p>
-    <div class="navseperator" style="max-height: 33px; top:-1px"></div>
-    <p class="fishtype" style="max-width: 9%; min-width: 55px;">Rare Sharks </p>
-    <div class="navseperator" style="max-height: 33px; top:-1px"></div>
-    <p class="fishtype" style="max-width: 9%; min-width: 55px;">Special Fish</p>
-    <div class="navseperator" style="max-height: 33px; top:-1px"></div>
-    <p class="fishtype" style="max-width: 8%; min-width: 45px;">Whales</p>
 
 
     <div class="longbarseperator"></div>
     <br>
 
     <p class="fishdata" id="fishcount" style="max-width: 9%; min-width: 60px;">Loading...</p>
-    <p class="fishdata" id="rarefishcount" style="max-width: 8%; min-width: 55px;">Loading...</p>
-    <p class="fishdata" id="veryrarefishcount">loading...</p>
-    <p class="fishdata" id="sharkcount" style="max-width: 9%; min-width: 60px;">loading...</p>
-    <p class="fishdata" id="raresharkcount" style="max-width: 9%; min-width: 55px;">loading...</p>
-    <p class="fishdata" id="specialfishcount" style="max-width: 9%; min-width: 55px;">loading...</p>
-    <p class="fishdata" id="whalecount" style="max-width: 8%; min-width: 45px;">loading...</p>
 
    </div>
 
@@ -483,46 +217,12 @@
 
    <div oncontextmenu="return false;" onclick="goFishing(false)" class="fishbutton" id="fishbutton"><p class="unselectable" style="margin-left: auto; margin-right: auto; margin-top: 6px; margin-bottom: auto;">Fish!</p></div>
 
-   <label class="switch" style="display: inline-block; bottom: -2px; height: 36px;">
-    <input type="checkbox" id="autofish">
-    <span class="slider round"></span>
-    <p style="display:block; position:absolute; margin-top: -56px; font-size: 12px; margin-left: 6px;">Autofish</p>
-    <p style="display:block; position:absolute; margin-top: 6px; font-size: 10px; margin-left: -164px; min-width: 240px; color:#cccccc">(Note: Autofish is slower than manually clicking)</p>
-  </label>
-
-   <br><br><br>
-
-   <div class="shopbutton">
-    <button onclick="openShop()" class="nicebutton" id="shopbutton" style="width: 75%; height: 75%; margin-top: 6%;"><img id="shopimg" src="../images/shop.png" style="width: 70%; height: 60%;"></button>
-    <p style="font-size: 16px; margin-top: 3px; text-align: center; margin-left: auto; margin-right: auto;">Open Shop</p>
-   </div>
-
-   
-
-   <div class="sendfishbackground">
-      <p class="fishtype" style="font-size: 16px; margin-top:14px; max-width: 200px;">Send fish:</p><br>
-      <input type="text" id="sendfishto" name="reciever" class="sendfish" placeholder="Reciever" style="margin-left: 4px; width: 50%;"><br>
-      <input type="text" id="sendfishamount" name="amount" class="sendfish" placeholder="Amount" style="margin-left: 4px; width: 50%; margin-top:8px;"><br>
-      <input type="password" id="sendfishpassword" name="password" class="sendfish" placeholder="Password" style="margin-left: 4px; width: 50%; margin-top:8px;">
-      <button onclick="sendFish()" class="nicebutton" style="display: inline-block; min-height: 62px; max-height: 62px; width: calc(50% - 16px); position: absolute; top:30px; margin-left: 4px; font-size: calc(0.33vw + 10px);">Send Fish</button>
-      <button onclick="openSendLogs()" class="nicebutton" style="display: inline-block; min-height: 31px; max-height: 31px; width: calc(50% - 16px); position: absolute; top:95px; margin-left: 4px; font-size: calc(0.33vw + 10px);">Send Logs</button>
-      <p id="sentstatus" style="display: absolute; position: absolute; top:114px; font-size: 16px;"></p>
-      <div id="sendfishnotifications" style="display: none; position: absolute; width: 100%;">
-        <img src="../images/red_dot.png" style="position: absolute; display: block; width: 20px; margin-left: calc(50% - 22px); z-index: 2; margin-top: 2px;">
-        <p id="sendfishnotificationcount" style="z-index: 2; display: inline-block; position: absolute; margin-left: calc(50% - 17px); margin-top: 1px;">1</p>
-      </div>
-   </div>
-
    <br><br><br>
 
    <div>
     <div id="publicchatbutton" onclick="setChannel('public')" style="cursor: pointer; min-width: 1px; width: fit-content; min-height: 24px; max-height: 24px; outline-color: #ffffff; outline-style: solid; outline-width: 1px; margin-top: -25px; background-color: #1d1a2c; display: inline-block; position: absolute;">
       <p class="unselectable" id="publicchattext" style="position: relative;margin-left: 4px; margin-right: 4px; margin-top: 0px; color: #ffffff;">Public</p>
       <div id="publicchatbar" style="display: block; width: 100%; height: 1px; background-color: #1d1a2c; margin-top: -18px; z-index: 1; position: relative;"></div>
-    </div>
-    <div id="guildchatbutton" onclick="setChannel('guild')" style="cursor: pointer; min-width: 1px; width: fit-content; min-height: 24px; max-height: 24px; outline-color: #ffffff; outline-style: solid; outline-width: 1px; margin-top: -25px; background-color: #1d1a2c; display: none; position: absolute; margin-left: 62px;">
-      <p class="unselectable" id="guildchattext" style="position: relative;margin-left: 4px; margin-right: 4px; margin-top: 0px; color: #cccccc;">Guild</p>
-      <div id="guildchatbar" style="display: none; width: 100%; height: 1px; background-color: #1d1a2c; margin-top: -18px; z-index: 1; position: relative;"></div>
     </div>
     <div id="staffchatbutton" onclick="setChannel('staff')" style="cursor: pointer; min-width: 1px; width: fit-content; min-height: 24px; max-height: 24px; outline-color: #ffffff; outline-style: solid; outline-width: 1px; margin-top: -25px; background-color: #1d1a2c; display: none; position: absolute; margin-left: 116px;">
       <p class="unselectable" id="staffchattext" style="position: relative;margin-left: 4px; margin-right: 4px; margin-top: 0px; color: #cccccc;">Staff</p>
@@ -538,23 +238,6 @@
     <p id="sendmessagestatus" style="display: inline-block; position: absolute; margin-top: 6px; font-size: calc(0.66vw + 4px); color: #ea7b7b"><br></p>
    </div>
    <br><br>
-   
-   <div class="specialfixbox" style="position: absolute; left: calc(59.7% - 16px); margin-top: calc(3vw - 98px);"> 
-    <p class="unselectable" id="specialfishhoverprice" style="position: absolute; margin-top: calc(0.8vw + 90px); font-size: calc(0.45vw + 8px); text-align: center; left: 0%;">256k</p>
-    <p class="center" style="position: relative; margin-bottom: 0px;">Special Fish</p><br>
-    <div class="longbarseperator" style="position: relative; margin-top: -16px;"></div>
-    <p id="specialfishcost" style="display: block; position: absolute; font-size: calc(0.9vw + 4px); text-align: center; min-width: 49%; max-width: 49%; margin-top: calc(22px - 0.4vw);">Loading...</p>
-    <br><br><br>
-    
-    <p id="specialfishsellcost" style="display: block; position: absolute;  font-size: calc(0.9vw + 4px); text-align: center;  min-width: 49%; max-width: 49%; margin-top: calc(-32px - 0.4vw); margin-left: 50%;">Loading...</p>
-    <div class="navseperator" style="max-height: calc(0.4vw + 8px); margin-top: calc(-0.2vw - 34px); position: absolute; display: inline-block; left: calc(49.8% - 2px);"></div>
-    <div class="longbarseperator" style="position: relative; margin-top: -29px; margin-bottom: -18px;"></div><br><br>
-    <button class="nicebutton" onclick="buyItem('specialFish')" style="position: relative; width: 48%; min-width: 45%; margin-left: 1%; margin-right: 1%; margin-top: -100px; font-size: calc(0.45vw + 8px);">Buy Special Fish</button>
-    <button class="nicebutton" onclick="buyItem('sellSpecialFish')" style="position: relative; width: 48%; min-width: 45%; font-size: calc(0.45vw + 8px);">Sell Special Fish</button>
-    <canvas onmousemove="specialFishHover(event)" onmouseleave="stopSpecialFishHover()" id="specialfishgraph" height="328"  width="1000" style=" width: 100%; margin-top: 3px; margin-bottom: -4px;"> </canvas>
-   </div>
-   <p id="specialfishstatus" style="position: absolute; margin-left: calc(50.4% - 17px); margin-top: calc(13.75vw + 8px); color: #ea7b7b;"><br></p>
-
 
    <div>
 
@@ -578,46 +261,7 @@
         <input id="betamount" placeholder="Bet" style="margin-top: 8px; width: calc(24% - 4px); display:inline-block">
         <p id="spininfo" style="display: inline-block; position: absolute; margin-left: calc(-22% + 4px); margin-top: 37px;"><br></p>
       </div>
-
-      <div style="width: 21.75%; max-height: 12vw; min-height: 12vw; position: absolute; background-color: #1d1a2c; margin-top: 30px; outline-style: solid; outline-width: 1px; outline-color: #ffffff;">
-        <div id="fishingboatnotification" style="display: none;">
-          <img src="../images/red_dot.png" style="position: absolute; display: block; width: 20px; margin-left: 92.5%; z-index: 2; margin-top: 2px;">
-          <p style="z-index: 2; display: inline-block; position: absolute; margin-left: calc(93.5% + 3px); margin-top: 1px;">!</p>
-        </div>
-        <button onclick="openFishingBoat()" class="nicebutton" style="display: inline-block; position: relative; min-width: 90%; max-width: 90%; min-height: calc(12vw - 42px); max-height: calc(12vw - 42px); margin-left: 5%; margin-top: 12px;"><img id="fishing_boatimg" src="../images/fishing_boat.png" style="width: calc(55% - 16px); height: calc(55% - 16px); margin-top: -0.4vw;"></button>
-        <p style="width: 100%; text-align: center; margin-left: auto; margin-right: auto; margin-top: 0.15vw; font-size: calc(0.8vw + 4px);">Open Fishing Boat</p>
-        
-      </div>
-      <p id="fishingboatstatus" style="display: none; position: absolute; margin-top: 264px; font-size: 14px; color:#ea7b7b">You need to be level 25 to use the fishing boat.</p>
-      <br>
-
-      
-      <div id="pixelcanvasdiv" onmouseup="placePixel(event, false)" onmousedown="placePixel(event, true)" onmouseover="getPixelPlacePos(event)" class="pixelfish" style="margin-top: calc(-5.6% - 112px);">
-          <canvas onmouseleave="exitPixelCanvas()" onmouseover="placePixel(event, false)" onmouseleave="exitPixelCanvas()" onmousemove="getPixelPlacePos(event)" class="pixelfishcanvas" id="pixelfishcanvas" height="2560" width="2560"></canvas>
-          <img id="canvasfullscreenx" onclick="exitFullscreenCanvas()" src="../images/x.png" draggable="false" class="unselectable" style="display: none; position: fixed; max-width: 48px; max-height: 48px; z-index: 100000; left: 80%; margin-top: 16px; cursor: pointer;">
-          <input id="colorinputfullscreen" style="display: none; position: fixed; margin-left: 26%; width: calc(10% + 32px); margin-top: calc(40% + 3vw);" placeholder="Color (ex: #658fba)">
-          <div id="fullscreencolorselectorcolor" style="display: none; position: fixed; margin-left: 26%; min-width: calc(10% + 36px); margin-top: calc(40% + 3vw - 36px); background-color: #bbbbbb; height: 32px; outline-style: solid; outline-width: 1px; outline-color: white;"></div>
-      </div>
-      <br>
-      <input id="colorinput" style="display: inline-block; position: relative; margin-left: 25%; width: 10%; margin-top: 2px;" placeholder="Color (ex: #658fba)">
-
-      
-      
-      
-      <div onmouseover="exitPixelCanvas()" onclick="fullscreenCanvas()" style="display: inline-block; position: absolute; margin-left: calc(14% - 64px); width: 32px; height: 32px; margin-top: -50px; cursor: pointer; background-color: #1d1a2c; outline-style: solid; outline-width: 1px; outline-color: white; opacity: 0.75;"><img src="../images/fullscreen.png" draggable="false" class="unselectable" style="width: 75%; height: 75%; margin-left: 4px; margin-top: 4px;"></div>
-      <div id="colorselectorcolor" style="min-width:26px; min-height:26px; background-color: white; display: inline-block; position: absolute; margin-left: 4px; margin-top: 2px; outline-style: solid; outline-width: 1px; outline-color: white;"></div>
-
-      <p style="display: inline-block; position: absolute; margin-left: 36px; margin-top: 32px; font-size: 10px; color: #bbbbbb; margin-left: -9.3%; max-width: 22.5%;">Info: This canvas is shared by everyone. You can place 2 pixels every second.</p>
-
-      <br>
-      <button onclick="googleClassroomTheme()" id="gcbutton" class="nicebutton" style="display: inline-block; position: absolute; min-height: 24px; max-height: 24px; margin-left: 0%; min-width: 80.5%; margin-top: 270px;">"Light" Theme</button>
-      
    </div>
-
-   
-
-   
-   
 
    <div class="captcha" id="captcha">
    <form action="https://traoxfish.us-3.evennode.com/submitcaptcha" method="POST" id="g-captcha">
