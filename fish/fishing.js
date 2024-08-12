@@ -634,7 +634,6 @@ function getFish() {
 
             for (var i = 0; i < 5; i++) {
                 if (i > json.upgradeSlots - 1) {
-                    console.log("asd")
                     document.getElementById("fishingrodupgradeslot" + (i + 1)).style.display = "none"
                     if (i + 2 <= 5) document.getElementById("fishingrodupgradeslot" + (i + 2) + "label").style.display = "none"
                     document.getElementById("fishingrodupgradeslot" + (i + 1) + "block").style.display = "none"
@@ -650,7 +649,6 @@ function getFish() {
                         document.getElementById("fishingrodupgradeslot" + (i + 1)).value = ""
                         document.getElementById("fishingrodupgradeslot" + (i + 1) + "block").style.display = "none"
                     } else {
-                        console.log("asd2")
                         document.getElementById("fishingrodupgradeslot" + (i + 1) + "label").style.display = "inline"
                         document.getElementById("fishingrodupgradeslot" + (i + 1) + "block").style.display = "inline"
                         document.getElementById("fishingrodupgradeslot" + (i + 1)).style.display = "none"
