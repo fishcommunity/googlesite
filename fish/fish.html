@@ -36,125 +36,164 @@
     </div>
   </div>
 
-   <div onclick="closeProfile()" id="viewprofile" class="viewprofile">
-      <div onclick="event.stopPropagation()" class="profilebackground">
-        <button onclick="openSettings()" id="profile-settings" class="nicebutton" style="width: 32px; height: 32px; display: none; position: absolute; transform: translate(720px, 16px);"><img id="settingsimg" src="../images/settings.png" style="width: 100%; height: 77.5%; margin-top: 3px;"></button>
-        <img id="profile-picture" src="../images/profile.png" draggable="false" class="unselectable" style="width: 128px; height: 128px; margin-left: 32px; margin-top: 32px; outline-style: solid; outline-width: 1px; outline-color: #ffffff; border-radius: 64px;">
-        <h1 id="profile-username" style="display: inline-block; transform: translate(0, -48px); margin-left: 12px; font-size: 250%;">Loading...</h1>
-	      <p id="profile-rank" style="display: flex; position: absolute; transform: translate(0, -90px); margin-left: 180px; font-size: 75%;"></p>
-        <button id="openfriends" onclick="openFriends()" class="nicebutton" style="position: absolute; display: none; margin-left: 180px; margin-top: -58px;">Friends</button>
-        <button id="addfriend" class="nicebutton" style="position: absolute; display: none; margin-left: 180px; margin-top: -58px;">Send Friend Request</button>
-        <div class="longbarseperator" style="display: inline-block; transform: translate(0, -24px); position: initial;"></div>
-        <div style="margin-left: 32px; transform: translate(0, -12px); position: relative; max-width: 46%; width: 46%; display: inline-block;">
-          <p id="profile-fish" style="line-height: 3px; font-size: 15px;">Fish: Loading...</p>
-          <p id="profile-alltimefish" style="line-height: 3px; font-size: 15px;">All Time Fish: Loading...</p>
-          <p id="profile-fishgambled" style="line-height: 3px; font-size: 15px;">Fish Gambled: Loading...</p>
-          <br>
-          <p id="profile-fishperclick" style="line-height: 3px; font-size: 15px;">Fish Per Click: Loading...</p>
-        </div>
-        <div class="navseperator" style="height: 59.75%; margin-top: -27px; margin-left: 0px;"></div>
-        <div style="margin-left: 32px; transform: translate(0, -46px); position: relative; max-width: 42%; width: 42%; display: inline-block; align-items:start;">
-          <p id="profile-joindate" style="line-height: 3px; font-size: 15px;">Join Date: Loading...</p>
-          <p id="profile-lastonline" style="line-height: 3px; font-size: 15px;">Last Online: Loading...</p>
-          <p id="profile-playtime" style="line-height: 3px; max-width: 200%; font-size: 15px;">Playtime: Loading...</p>
-          <p id="profile-friends" style="line-height: 3px; font-size: 15px;">Friends: Loading...</p>
-        </div>
-
-        <div onclick="closeFriends()" id="friendsbackground" style="display: none; min-width: 100%; min-height: 100%; position: absolute; transform: translate(0, -500px);">
-          <div onclick="event.stopPropagation()" style="display: block; background-color: #1d1a2c; width: 75%; height: 75%; max-width: 75%; max-height: 75%; position: absolute; outline-style: solid; outline-width: 1px; outline-color: #ffffff; margin-left: auto; margin-right: auto; transform: translate(16.6%, 16.6%); ">
-            <div class="center" style="position: relative; width: 100%;">
-              <p style="max-width: 25%; font-size: 16px; display: inline-block; margin-left: 12%; position: relative; text-align: center;">Friends</p>
-              <div class="navseperator" style="height: 372px; margin-top: 13px; margin-left: 11.4%;"></div>
-              <p style="max-width: 25%; font-size: 16px; display: inline-block; margin-left: 16.5%; position: relative; text-align: center;">Incoming Requests</p>
-              <div class="navseperator" style="height: 372px; margin-top: 13px; margin-left: 3.6%;"></div>
-              <p style="max-width: 25%; font-size: 16px; display: inline-block; margin-left: 9%; position: relative; text-align: center;">Outgoing Requests</p>
-              <div class="longbarseperator" style="margin-top: 24px;"></div>
-              <div id="friends-friends" class="friendlist" style="margin-left: -95%; overflow-y: scroll;">
-                <p class="frienditem">Loading...</p>
-              </div>
-              <div id="friends-incoming" class="friendlist" style="margin-left: -61.75%; overflow-y: scroll;">
-                <p class="frienditem">Loading...</p>
-              </div>
-              <div id="friends-outgoing"  class="friendlist" style="margin-left: -28.5%; overflow-y: scroll; ">
-                <p class="frienditem">Loading...</p>
-              </div>
-            </div>
-        </div>
-
-        </div>
-        <div onclick="closeSetPFP()" id="selectpfpbackground" style="display: none; position: absolute; min-width: 100%; min-height: 100%; transform: translate(0, -500px); ">
-
-          <img onclick="closeSetPFP()" src="../images/x.png" style="display: block; position: absolute; width: 24px; cursor: pointer; margin-left: 81.5%; margin-top: 9%; z-index: 6;">
-
-          <div onclick="event.stopPropagation()" style="display: block; background-color: #1d1a2c; max-width: 75%; max-height: 75%; position: absolute; outline-style: solid; outline-width: 1px; outline-color: #ffffff; margin-left: auto; margin-right: auto; transform: translate(16.6%, 16.6%); overflow-y: scroll;">
-            <img onclick="setProfilePicture('burger_king')" src="../images/profiles/burger_king.png" style="width: 18%; height: 18%; margin-left: 5%; margin-top: 5%; line-height: 0px; display: inline-block; position: relative; cursor: pointer;">
-            <img onclick="setProfilePicture('epic_green_car')" src="../images/profiles/epic_green_car.png" style="width: 18%; height: 18%; margin-left: 5%; margin-top: 5%; line-height: 0px; display: inline-block; position: relative; cursor: pointer;">
-            <img onclick="setProfilePicture('epic_red_car')" src="../images/profiles/epic_red_car.png" style="width: 18%; height: 18%; margin-left: 5%; margin-top: 5%; line-height: 0px; display: inline-block; position: relative; cursor: pointer;">
-            <img onclick="setProfilePicture('fornite_balenciaga')" src="../images/profiles/fornite_balenciaga.png" style="width: 18%; height: 18%; margin-left: 5%; margin-top: 5%; line-height: 0px; display: inline-block; position: relative; cursor: pointer;">
-            <img onclick="setProfilePicture('funny_fish_guy')" src="../images/profiles/funny_fish_guy.png" style="width: 18%; height: 18%; margin-left: 5%; margin-top: 5%; line-height: 0px; display: inline-block; position: relative; cursor: pointer;">
-            <img onclick="setProfilePicture('gambler')" src="../images/profiles/gambler.png" style="width: 18%; height: 18%; margin-left: 5%; margin-top: 5%; line-height: 0px; display: inline-block; position: relative; cursor: pointer;">
-            <img onclick="setProfilePicture('gangster_daffy_duck')" src="../images/profiles/gangster_daffy_duck.png" style="width: 18%; height: 18%; margin-left: 5%; margin-top: 5%; line-height: 0px; display: inline-block; position: relative; cursor: pointer;">
-            <img onclick="setProfilePicture('gangster_fish')" src="../images/profiles/gangster_fish.png" style="width: 18%; height: 18%; margin-left: 5%; margin-top: 5%; line-height: 0px; display: inline-block; position: relative; cursor: pointer;">
-            <img onclick="setProfilePicture('gangster_skeleton')" src="../images/profiles/gangster_skeleton.png" style="width: 18%; height: 18%; margin-left: 5%; margin-top: 5%; line-height: 0px; display: inline-block; position: relative; cursor: pointer;">
-            <img onclick="setProfilePicture('gangster_skull')" src="../images/profiles/gangster_skull.png" style="width: 18%; height: 18%; margin-left: 5%; margin-top: 5%; line-height: 0px; display: inline-block; position: relative; cursor: pointer;">
-            <img onclick="setProfilePicture('gangster_snail')" src="../images/profiles/gangster_snail.png" style="width: 18%; height: 18%; margin-left: 5%; margin-top: 5%; line-height: 0px; display: inline-block; position: relative; cursor: pointer;">
-            <img onclick="setProfilePicture('gangster_spongebob')" src="../images/profiles/gangster_spongebob.png" style="width: 18%; height: 18%; margin-left: 5%; margin-top: 5%; line-height: 0px; display: inline-block; position: relative; cursor: pointer;">
-            <img onclick="setProfilePicture('jesse_pinkman')" src="../images/profiles/jesse_pinkman.png" style="width: 18%; height: 18%; margin-left: 5%; margin-top: 5%; line-height: 0px; display: inline-block; position: relative; cursor: pointer;">
-            <img onclick="setProfilePicture('john_f_kenedy')" src="../images/profiles/john_f_kenedy.png" style="width: 18%; height: 18%; margin-left: 5%; margin-top: 5%; line-height: 0px; display: inline-block; position: relative; cursor: pointer;">
-            <img onclick="setProfilePicture('keep_gambling')" src="../images/profiles/keep_gambling.png" style="width: 18%; height: 18%; margin-left: 5%; margin-top: 5%; line-height: 0px; display: inline-block; position: relative; cursor: pointer;">
-            <img onclick="setProfilePicture('slots')" src="../images/profiles/slots.png" style="width: 18%; height: 18%; margin-left: 5%; margin-top: 5%; line-height: 0px; display: inline-block; position: relative; cursor: pointer;">
-            <img onclick="setProfilePicture('swat_rat')" src="../images/profiles/swat_rat.png" style="width: 18%; height: 18%; margin-left: 5%; margin-top: 5%; line-height: 0px; display: inline-block; position: relative; cursor: pointer;">
-            <img onclick="setProfilePicture('trump_mug_shot')" src="../images/profiles/trump_mug_shot.png" style="width: 18%; height: 18%; margin-left: 5%; margin-top: 5%; line-height: 0px; display: inline-block; position: relative; cursor: pointer;">
-            <img onclick="setProfilePicture('cum_car')" src="../images/profiles/cum_car.png" style="width: 18%; height: 18%; margin-left: 5%; margin-top: 5%; line-height: 0px; display: inline-block; position: relative; cursor: pointer;">
-            <img onclick="setProfilePicture('piss_car')" src="../images/profiles/piss_car.png" style="width: 18%; height: 18%; margin-left: 5%; margin-top: 5%; line-height: 0px; display: inline-block; position: relative; cursor: pointer;">
-          </div>
-        </div>
-
-        <div onclick="closeSettings()" id="profilesettingsbackground" style="display: none; position: absolute; min-width: 100%; min-height: 100%; transform: translate(0, -350px);">
-          <div onclick="event.stopPropagation()" style="display: block; background-color: #1d1a2c; min-width: 75%; min-height: 75%; position: absolute; outline-style: solid; outline-width: 1px; outline-color: #ffffff; margin-left: auto; margin-right: auto; transform: translate(16.6%, 16.6%);">
-            <p style="position: absolute; display: inline-block; margin-left: 24.5%; margin-top: 58px;">Change Password:</p>
-            <input type="password" id="changepasswordold" class="center" placeholder="Old Password" style="display: inline-block; position: inital; min-width: 50%; margin-top:98px;">
-            <input type="password" id="changepasswordnew" class="center" placeholder="New Password" style="display: inline-block; position: inital;  min-width: 50%; margin-top:138px;">
-            <input type="password" id="changepasswordnewconfirm" class="center" placeholder="Confirm New Password" style="display: inline-block; position: inital; min-width: 50%; margin-top:178px;">
-            <button onclick="changePassword()" class="nicebutton center" style="min-width: 50%; margin-top: 218px;">Change Password</button>
-            <p id="changepasswordstatus" style="position: absolute; display: inline-block; margin-left: 24.5%; margin-top: 288px; font-size: 16px; max-width: 50%;"> </p>
-            <button onclick="logout()" class="nicebutton center" style="min-width: 50%; margin-top: 328px;">Logout</button>
-          </div>
-        </div>
-        
+  <div onclick="closeProfile()" id="viewprofile" class="viewprofile">
+    <div onclick="event.stopPropagation()" class="profilebackground">
+      <button onclick="openSettings()" id="profile-settings" class="nicebutton" style="width: 32px; height: 32px; display: none; position: absolute; transform: translate(720px, 16px);"><img id="settingsimg" src="../images/settings.png" style="width: 100%; height: 77.5%; margin-top: 3px;"></button>
+      <img id="profile-picture" src="../images/profile.png" draggable="false" class="unselectable" style="width: 128px; height: 128px; margin-left: 32px; margin-top: 32px; outline-style: solid; outline-width: 1px; outline-color: #ffffff; border-radius: 64px;">
+      <h1 id="profile-username" style="display: inline-block; transform: translate(0, -48px); margin-left: 12px; font-size: 250%;">Loading...</h1>
+      <p id="profile-rank" style="display: flex; position: absolute; transform: translate(0, -90px); margin-left: 180px; font-size: 75%;"></p>
+      <button id="openfriends" onclick="openFriends()" class="nicebutton" style="position: absolute; display: none; margin-left: 180px; margin-top: -58px;">Friends</button>
+      <button id="addfriend" class="nicebutton" style="position: absolute; display: none; margin-left: 180px; margin-top: -58px;">Send Friend Request</button>
+      <div class="longbarseperator" style="display: inline-block; transform: translate(0, -24px); position: initial;"></div>
+      <div style="margin-left: 32px; transform: translate(0, -12px); position: relative; max-width: 46%; width: 46%; display: inline-block;">
+        <p id="profile-fish" style="line-height: 3px; font-size: 15px;">Fish: Loading...</p>
+        <p id="profile-alltimefish" style="line-height: 3px; font-size: 15px;">All Time Fish: Loading...</p>
+        <p id="profile-fishgambled" style="line-height: 3px; font-size: 15px;">Fish Gambled: Loading...</p>
+        <br>
+        <p id="profile-fishperclick" style="line-height: 3px; font-size: 15px;">Fish Per Click: Loading...</p>
       </div>
+      <div class="navseperator" style="height: 59.75%; margin-top: -27px; margin-left: 0px;"></div>
+      <div style="margin-left: 32px; transform: translate(0, -46px); position: relative; max-width: 42%; width: 42%; display: inline-block; align-items:start;">
+        <p id="profile-joindate" style="line-height: 3px; font-size: 15px;">Join Date: Loading...</p>
+        <p id="profile-lastonline" style="line-height: 3px; font-size: 15px;">Last Online: Loading...</p>
+        <p id="profile-playtime" style="line-height: 3px; max-width: 200%; font-size: 15px;">Playtime: Loading...</p>
+        <p id="profile-friends" style="line-height: 3px; font-size: 15px;">Friends: Loading...</p>
+      </div>
+
+      <div onclick="closeFriends()" id="friendsbackground" style="display: none; min-width: 100%; min-height: 100%; position: absolute; transform: translate(0, -350px);">
+        <div onclick="event.stopPropagation()" style="display: block; background-color: #1d1a2c; width: 75%; height: 75%; max-width: 75%; max-height: 75%; position: absolute; outline-style: solid; outline-width: 1px; outline-color: #ffffff; margin-left: auto; margin-right: auto; transform: translate(16.6%, 16.6%); ">
+          <div class="center" style="position: relative; width: 100%;">
+            <p style="max-width: 25%; font-size: 16px; display: inline-block; margin-left: 12%; position: relative; text-align: center;">Friends</p>
+            <div class="navseperator" style="height: 372px; margin-top: 13px; margin-left: 11.4%;"></div>
+            <p style="max-width: 25%; font-size: 16px; display: inline-block; margin-left: 16.5%; position: relative; text-align: center;">Incoming Requests</p>
+            <div class="navseperator" style="height: 372px; margin-top: 13px; margin-left: 3.6%;"></div>
+            <p style="max-width: 25%; font-size: 16px; display: inline-block; margin-left: 9%; position: relative; text-align: center;">Outgoing Requests</p>
+            <div class="longbarseperator" style="margin-top: 24px;"></div>
+            <div id="friends-friends" class="friendlist" style="margin-left: -95%; overflow-y: scroll;">
+              <p class="frienditem">Loading...</p>
+            </div>
+            <div id="friends-incoming" class="friendlist" style="margin-left: -61.75%; overflow-y: scroll;">
+              <p class="frienditem">Loading...</p>
+            </div>
+            <div id="friends-outgoing"  class="friendlist" style="margin-left: -28.5%; overflow-y: scroll; ">
+              <p class="frienditem">Loading...</p>
+            </div>
+          </div>
+      </div>
+
+      </div>
+      <div onclick="closeSetPFP()" id="selectpfpbackground" style="display: none; position: absolute; min-width: 100%; min-height: 100%; transform: translate(0, -350px); ">
+
+        <img onclick="closeSetPFP()" src="../images/x.png" style="display: block; position: absolute; width: 24px; cursor: pointer; margin-left: 81.5%; margin-top: 9%; z-index: 6;">
+
+        <div onclick="event.stopPropagation()" style="display: block; background-color: #1d1a2c; max-width: 75%; max-height: 75%; position: absolute; outline-style: solid; outline-width: 1px; outline-color: #ffffff; margin-left: auto; margin-right: auto; transform: translate(16.6%, 16.6%); overflow-y: scroll;">
+          <img onclick="setProfilePicture('burger_king')" src="../images/profiles/burger_king.png" style="width: 18%; height: 18%; margin-left: 5%; margin-top: 5%; line-height: 0px; display: inline-block; position: relative; cursor: pointer;">
+          <img onclick="setProfilePicture('epic_green_car')" src="../images/profiles/epic_green_car.png" style="width: 18%; height: 18%; margin-left: 5%; margin-top: 5%; line-height: 0px; display: inline-block; position: relative; cursor: pointer;">
+          <img onclick="setProfilePicture('epic_red_car')" src="../images/profiles/epic_red_car.png" style="width: 18%; height: 18%; margin-left: 5%; margin-top: 5%; line-height: 0px; display: inline-block; position: relative; cursor: pointer;">
+          <img onclick="setProfilePicture('fornite_balenciaga')" src="../images/profiles/fornite_balenciaga.png" style="width: 18%; height: 18%; margin-left: 5%; margin-top: 5%; line-height: 0px; display: inline-block; position: relative; cursor: pointer;">
+          <img onclick="setProfilePicture('funny_fish_guy')" src="../images/profiles/funny_fish_guy.png" style="width: 18%; height: 18%; margin-left: 5%; margin-top: 5%; line-height: 0px; display: inline-block; position: relative; cursor: pointer;">
+          <img onclick="setProfilePicture('gambler')" src="../images/profiles/gambler.png" style="width: 18%; height: 18%; margin-left: 5%; margin-top: 5%; line-height: 0px; display: inline-block; position: relative; cursor: pointer;">
+          <img onclick="setProfilePicture('gangster_daffy_duck')" src="../images/profiles/gangster_daffy_duck.png" style="width: 18%; height: 18%; margin-left: 5%; margin-top: 5%; line-height: 0px; display: inline-block; position: relative; cursor: pointer;">
+          <img onclick="setProfilePicture('gangster_fish')" src="../images/profiles/gangster_fish.png" style="width: 18%; height: 18%; margin-left: 5%; margin-top: 5%; line-height: 0px; display: inline-block; position: relative; cursor: pointer;">
+          <img onclick="setProfilePicture('gangster_skeleton')" src="../images/profiles/gangster_skeleton.png" style="width: 18%; height: 18%; margin-left: 5%; margin-top: 5%; line-height: 0px; display: inline-block; position: relative; cursor: pointer;">
+          <img onclick="setProfilePicture('gangster_skull')" src="../images/profiles/gangster_skull.png" style="width: 18%; height: 18%; margin-left: 5%; margin-top: 5%; line-height: 0px; display: inline-block; position: relative; cursor: pointer;">
+          <img onclick="setProfilePicture('gangster_snail')" src="../images/profiles/gangster_snail.png" style="width: 18%; height: 18%; margin-left: 5%; margin-top: 5%; line-height: 0px; display: inline-block; position: relative; cursor: pointer;">
+          <img onclick="setProfilePicture('gangster_spongebob')" src="../images/profiles/gangster_spongebob.png" style="width: 18%; height: 18%; margin-left: 5%; margin-top: 5%; line-height: 0px; display: inline-block; position: relative; cursor: pointer;">
+          <img onclick="setProfilePicture('jesse_pinkman')" src="../images/profiles/jesse_pinkman.png" style="width: 18%; height: 18%; margin-left: 5%; margin-top: 5%; line-height: 0px; display: inline-block; position: relative; cursor: pointer;">
+          <img onclick="setProfilePicture('john_f_kenedy')" src="../images/profiles/john_f_kenedy.png" style="width: 18%; height: 18%; margin-left: 5%; margin-top: 5%; line-height: 0px; display: inline-block; position: relative; cursor: pointer;">
+          <img onclick="setProfilePicture('keep_gambling')" src="../images/profiles/keep_gambling.png" style="width: 18%; height: 18%; margin-left: 5%; margin-top: 5%; line-height: 0px; display: inline-block; position: relative; cursor: pointer;">
+          <img onclick="setProfilePicture('slots')" src="../images/profiles/slots.png" style="width: 18%; height: 18%; margin-left: 5%; margin-top: 5%; line-height: 0px; display: inline-block; position: relative; cursor: pointer;">
+          <img onclick="setProfilePicture('swat_rat')" src="../images/profiles/swat_rat.png" style="width: 18%; height: 18%; margin-left: 5%; margin-top: 5%; line-height: 0px; display: inline-block; position: relative; cursor: pointer;">
+          <img onclick="setProfilePicture('trump_mug_shot')" src="../images/profiles/trump_mug_shot.png" style="width: 18%; height: 18%; margin-left: 5%; margin-top: 5%; line-height: 0px; display: inline-block; position: relative; cursor: pointer;">
+          <img onclick="setProfilePicture('cum_car')" src="../images/profiles/cum_car.png" style="width: 18%; height: 18%; margin-left: 5%; margin-top: 5%; line-height: 0px; display: inline-block; position: relative; cursor: pointer;">
+          <img onclick="setProfilePicture('piss_car')" src="../images/profiles/piss_car.png" style="width: 18%; height: 18%; margin-left: 5%; margin-top: 5%; line-height: 0px; display: inline-block; position: relative; cursor: pointer;">
+        </div>
+      </div>
+
+      <div onclick="closeSettings()" id="profilesettingsbackground" style="display: none; position: absolute; min-width: 100%; min-height: 100%; transform: translate(0, -350px);">
+        <div onclick="event.stopPropagation()" style="display: block; background-color: #1d1a2c; min-width: 75%; min-height: 75%; position: absolute; outline-style: solid; outline-width: 1px; outline-color: #ffffff; margin-left: auto; margin-right: auto; transform: translate(16.6%, 16.6%);">
+          <p style="position: absolute; display: inline-block; margin-left: 24.5%; margin-top: 58px;">Change Password:</p>
+          <input type="password" id="changepasswordold" class="center" placeholder="Old Password" style="display: inline-block; position: inital; min-width: 50%; margin-top:98px;">
+          <input type="password" id="changepasswordnew" class="center" placeholder="New Password" style="display: inline-block; position: inital;  min-width: 50%; margin-top:138px;">
+          <input type="password" id="changepasswordnewconfirm" class="center" placeholder="Confirm New Password" style="display: inline-block; position: inital; min-width: 50%; margin-top:178px;">
+          <button onclick="changePassword()" class="nicebutton center" style="min-width: 50%; margin-top: 218px;">Change Password</button>
+          <p id="changepasswordstatus" style="position: absolute; display: inline-block; margin-left: 24.5%; margin-top: 288px; font-size: 16px; max-width: 50%;"> </p>
+          <button onclick="logout()" class="nicebutton center" style="min-width: 50%; margin-top: 328px;">Logout</button>
+        </div>
+      </div>
+      
+    </div>
       
    </div>
 
-   <div class="shop" id="challengenotification" onclick="declineChallenge()" style="display: none;">
-    <div onclick="event.stopPropagation()" class="sendlogs" style="overflow-y: hidden; min-height: 200px; transform: translate(0, -150px);">
-      <p class="center" style="min-width: 55%;">Bait Fish Hook Challenge From</p>
-      <div class="longbarseperator" style="min-width: 66.66%; margin-left: 15%; margin-top: 13px;"></div>
-      <p class="center" id="challengenotificationuser" style="margin-top: 44px; font-size: 23px;">Loading...</p>
-      <div class="longbarseperator" style="min-width: 60.66%; margin-left: 18%; margin-top: 44px;"></div>
-      <p class="center" id="challengenotificationbid" style="margin-top: 74px; font-size: 18px;">Bet Amount: Loading... Fish</p>
-      <div class="longbarseperator" style="min-width: 96%; margin-left: 2%; margin-top: 72px;"></div>
-      <div style="margin-top: 92px; width: 100%; height: 106px;">
-        <button class="nicebutton" onclick="acceptChallenge()" style="height: 90%; width: 46%; margin-left: 2.5%; margin-top: 4px; font-size: 28px;">Accept</button>
-        <button class="nicebutton" onclick="declineChallenge()" style="height: 90%; width: 46%; margin-left: 2.5%; margin-top: 4px; font-size: 28px;">Decline</button>
+   <div onclick="closeFishingRodMenu()" id="fishingrodmenu" class="fishingrodmenu">
+    <div onclick="event.stopPropagation()" class="fishingrodmenubackground">
+      <img src="/images/fishing_rod.png" style="width: 20%; margin-left: 40%; margin-top: 5%;">
+      <p style="text-align: center; width: 100%; margin-left: 50%; transform: translate(-50%, 0%);">Fishing Rod Upgrades:</p>
+      <p id="fishingrodupgradeslot1label" style="position: absolute; margin-top: 10px; font-size: 14px; margin-left: calc(50% - 224px);">Slot 1:</p>
+      <p id="fishingrodupgradeslot2label" style="position: absolute; margin-top: 40px; font-size: 14px; margin-left: calc(50% - 224px);">Slot 2:</p>
+      <p id="fishingrodupgradeslot3label" style="position: absolute; margin-top: 70px; font-size: 14px; margin-left: calc(50% - 224px);">Slot 3:</p>
+      <p id="fishingrodupgradeslot4label" style="position: absolute; margin-top: 100px; font-size: 14px; margin-left: calc(50% - 224px);">Slot 4:</p>
+      <select onchange="changeFishingRodUpgrade(value, 1)"  name="type" id="fishingrodupgradeslot1" class="leaderboardselect" style="margin-left: 20%; min-width: 60%; font-size: 12px; margin-top: 9px; display: none; position: absolute;">
+        <option value="" selected disabled hidden>Select Upgrade</option>
+        <option value="increasedFish">Increased Fish</option>
+        <option value="fasterFishing">Faster Casting</option>
+        <option value="doubleFish">Double Fish</option>
+      </select>
+      <select onchange="changeFishingRodUpgrade(value, 2)" name="type" id="fishingrodupgradeslot2" class="leaderboardselect" style="margin-left: 20%; min-width: 60%; font-size: 12px; margin-top: 39px; display: none; position: absolute;">
+        <option value="" selected disabled hidden>Select Upgrade</option>
+        <option value="increasedFish">Increased Fish</option>
+        <option value="fasterFishing">Faster Casting</option>
+        <option value="doubleFish">Double Fish</option>
+      </select>
+      <select onchange="changeFishingRodUpgrade(value, 3)" name="type" id="fishingrodupgradeslot3" class="leaderboardselect" style="margin-left: 20%; min-width: 60%; font-size: 12px; margin-top: 69px; display: none; position: absolute;">
+        <option value="" selected disabled hidden>Select Upgrade</option>
+        <option value="increasedFish">Increased Fish</option>
+        <option value="fasterFishing">Faster Casting</option>
+        <option value="doubleFish">Double Fish</option>
+      </select>
+      <select onchange="changeFishingRodUpgrade(value, 4)" name="type" id="fishingrodupgradeslot4" class="leaderboardselect" style="margin-left: 20%; min-width: 60%; font-size: 12px; margin-top: 99px; display: none; position: absolute;">
+        <option value="" selected disabled hidden>Select Upgrade</option>
+        <option value="increasedFish">Increased Fish</option>
+        <option value="fasterFishing">Faster Casting</option>
+        <option value="doubleFish">Double Fish</option>
+      </select>
+      <div id="fishingrodupgradeslot1block" style="display: none;">
+        <div style="margin-left: 20%; width: 136px; height: 17px; background-color: #1d1a2c; outline-width: 1px; outline-color: white; outline-style: solid; margin-top: 10px; position: absolute;">
+          <p id="fishingrodupgradeslot1level" style="font-size: 12px; margin-left: 3px; transform: translate(0, -10px); max-width: 100%;"> Loading...</p>
+        </div>
+        <button onclick="purchaseFishingRodUpgrade(1)" id="fishingrodupgradeslot1button" class="nicebutton" style="margin-left: calc(20% + 145px); width: 142px; max-height: 17px; min-height: 17px; font-size: 12px; position: absolute; margin-top: 10px;">Upgrade: Loading...</button>
+        <button onclick="changeFishingRodUpgrade('', 1)" id="fishingrodupgradeslot1buttonreset" class="nicebutton" style="margin-left: calc(20% + 296px); width: 44px; max-height: 17px; min-height: 17px; font-size: 12px; position: absolute; margin-top: 10px;">Reset</button>
       </div>
-    </div>
-  </div>
-
-  <div class="shop" id="challengegame">
-    <div onclick="event.stopPropagation()" class="sendlogs" style="overflow-y: hidden; min-height: 400px; transform: translate(0, -50px);">
-      <p id="ongoinggamestatus" class="center" style="font-size: 26px;">Choose an option</p>
-      <div class="longbarseperator" style="min-width: 66.66%; margin-left: 15%; margin-top: 22px;"></div>
-      <p class="center" id="challengegameoponentoption" style="margin-top: 74px; font-size: 20px; text-align: center;">Waiting for Loading... to choose their option..</p>
-      <div class="longbarseperator" style="min-width: 96%; margin-left: 2%; margin-top: 96px;"></div>
-      <div style="margin-top: 124px; width: 100%; height: 276px;">
-        <button class="nicebutton" id="baitchoice" onclick="chooseChallengeOption('bait')" style="height: 90%; width: 30%; max-width: 30%; min-width: 30%; margin-left: 2.1%; margin-top: 4px; font-size: 28px;">Bait<br><img src="../images/bait.png" style="width: 50%; margin-top: 24px;"><p style="font-size: 10px; margin-left: 8%; transform: translate(0, 12px);">(Wins against hook) <br>(Looses against fish)</p></button>
-        <button class="nicebutton" id="fishchoice" onclick="chooseChallengeOption('fish')" style="height: 90%; width: 30%; max-width: 30%; min-width: 30%; margin-left: 2.1%; margin-top: 4px; font-size: 28px;">Fish<br><img src="../images/fish.png" style="width: 50%; margin-top: 24px;"><p style="font-size: 10px; margin-left: 8%; transform: translate(0, 12px);">(Wins against bait) <br>(Looses against hook)</p></button>
-        <button class="nicebutton" id="hookchoice" onclick="chooseChallengeOption('hook')" style="height: 90%; width: 30%; max-width: 30%; min-width: 30%; margin-left: 2.1%; margin-top: 4px; font-size: 28px;">Hook<br><img src="../images/fish_hook.png" style="width: 50%; margin-top: 24px;"><p style="font-size: 10px; margin-left: 8%; transform: translate(0, 12px);">(Wins against fish) <br>(Looses against bait)</p></button>
+      <div id="fishingrodupgradeslot2block" style="display: none;">
+        <div style="margin-left: 20%; width: 136px; height: 17px; background-color: #1d1a2c; outline-width: 1px; outline-color: white; outline-style: solid; margin-top: 40px; position: absolute;">
+          <p id="fishingrodupgradeslot2level" style="font-size: 12px; margin-left: 3px; transform: translate(0, -10px); max-width: 100%;"> Loading...</p>
+        </div>
+        <button onclick="purchaseFishingRodUpgrade(2)" id="fishingrodupgradeslot2button" class="nicebutton" style="margin-left: calc(20% + 145px); width: 142px; max-height: 17px; min-height: 17px; font-size: 12px; position: absolute; margin-top: 40px;">Upgrade: Loading...</button>
+        <button onclick="changeFishingRodUpgrade('', 2)" id="fishingrodupgradeslot2buttonreset" class="nicebutton" style="margin-left: calc(20% + 296px); width: 44px; max-height: 17px; min-height: 17px; font-size: 12px; position: absolute; margin-top: 40px;">Reset</button>
       </div>
-    </div>
-  </div>
+      <div id="fishingrodupgradeslot3block" style="display: none;">
+        <div style="margin-left: 20%; width: 136px; height: 17px; background-color: #1d1a2c; outline-width: 1px; outline-color: white; outline-style: solid; margin-top: 70px; position: absolute;">
+          <p id="fishingrodupgradeslot3level" style="font-size: 12px; margin-left: 3px; transform: translate(0, -10px); max-width: 100%;"> Loading...</p>
+        </div>
+        <button onclick="purchaseFishingRodUpgrade(3)" id="fishingrodupgradeslot3button" class="nicebutton" style="margin-left: calc(20% + 145px); width: 142px; max-height: 17px; min-height: 17px; font-size: 12px; position: absolute; margin-top: 70px;">Upgrade: Loading...</button>
+        <button onclick="changeFishingRodUpgrade('', 3)" id="fishingrodupgradeslot3buttonreset" class="nicebutton" style="margin-left: calc(20% + 296px); width: 44px; max-height: 17px; min-height: 17px; font-size: 12px; position: absolute; margin-top: 70px;">Reset</button>
+      </div>
+      <div id="fishingrodupgradeslot4block" style="display: none;">
+        <div style="margin-left: 20%; width: 136px; height: 17px; background-color: #1d1a2c; outline-width: 1px; outline-color: white; outline-style: solid; margin-top: 100px; position: absolute;">
+          <p id="fishingrodupgradeslot4level" style="font-size: 12px; margin-left: 3px; transform: translate(0, -10px); max-width: 100%;"> Loading...</p>
+        </div>
+        <button onclick="purchaseFishingRodUpgrade(4)" id="fishingrodupgradeslot4button" class="nicebutton" style="margin-left: calc(20% + 145px); width: 142px; max-height: 17px; min-height: 17px; font-size: 12px; position: absolute; margin-top: 100px;">Upgrade: Loading...</button>
+        <button onclick="changeFishingRodUpgrade('', 4)" id="fishingrodupgradeslot4buttonreset" class="nicebutton" style="margin-left: calc(20% + 296px); width: 44px; max-height: 17px; min-height: 17px; font-size: 12px; position: absolute; margin-top: 100px;">Reset</button>
+      </div>
+      <button onclick="purchaseUpgradeSlot()" id="fishingrodupgradeslotunlock" class="nicebutton" style="margin-left: 20%; width: 60%; font-size: 12px; margin-top: 8px; max-height: 12px; min-height: 18px; margin-top: 10px; position: absolute;">Unlock Cost: Loading...</button>
 
+      <div class="longbarseperator" style="margin-top: calc(50% + 106px); min-width: 66.66%; margin-left: 16.66%;"></div>
+      <p style="text-align: center; width: 100%; margin-left: 50%; transform: translate(-50%, 0%); margin-top: 166px;">Fishing Rod Stats:</p>
+      <p id="fishingrodstats" style="text-align: center; width: 100%; margin-left: 50%; transform: translate(-50%, 0%); margin-top: -12px; font-size: 14px;">Loading...</p>
+      
+    </div>
+   </div>
 
    <br><br>
 
@@ -216,6 +255,7 @@
    <br><br><br>
 
    <div oncontextmenu="return false;" onclick="goFishing(false)" class="fishbutton" id="fishbutton"><p class="unselectable" style="margin-left: auto; margin-right: auto; margin-top: 6px; margin-bottom: auto;">Fish!</p></div>
+   <button onclick="openFishingRodMenu()" class="nicebutton" style="position: absolute; width: 40px; margin-left: 12px;"><img src="/images/fishing_rod.png" style="height: 32px;"></button>
 
    <br><br><br>
 

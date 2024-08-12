@@ -18,7 +18,7 @@ function getData() {
         "username": getCookie("username"),
         "loginKey": getCookie("loginKey"),
     };
-    fetch("https://traoxfish.us-3.evennode.com/getadmindata", {
+    fetch("https://traoxfish.eu-4.evennode.com/getadmindata", {
         method: 'POST',
         credentials: "same-origin",
         headers: {
@@ -40,7 +40,7 @@ function sendCommand() {
         "user": document.getElementById("user").value,
         "value": document.getElementById("value").value,
     };
-    fetch("https://traoxfish.us-3.evennode.com/sendadmincommand", {
+    fetch("https://traoxfish.eu-4.evennode.com/sendadmincommand", {
         method: 'POST',
         credentials: "same-origin",
         headers: {
@@ -65,7 +65,7 @@ function keepOnline() {
         "username": getCookie("username"),
         "loginKey": getCookie("loginKey")
     };
-    fetch('https://traoxfish.us-3.evennode.com/online', {
+    fetch('https://traoxfish.eu-4.evennode.com/online', {
         method: 'POST',
         credentials: "same-origin",
         headers: {

@@ -619,6 +619,125 @@ function getFish() {
             document.getElementById("jackpotamount").innerText = "Jackpot: " + formatNumber(json.currentJackpot)
             document.getElementById("minjackpotbid").innerText = "Min bid for Jackpot: " + formatNumber(json.minimumBidForJackpot)
 
+            document.getElementById("fishingrodstats").innerHTML = "<br>"
+
+            for (var i = 0; i < json.fishingRodStats.length; i++) {
+                document.getElementById("fishingrodstats").innerHTML += json.fishingRodStats[i] + "<br>"
+            }
+
+            for (var i = 0; i < json.upgradeSlots; i++) {
+                if (json.upgrades[i] != undefined) {
+                    document.getElementById("fishingrodupgradeslot" + (i + 1) + "level").innerText = json.upgrades[i].name + " (Lvl " + json.upgrades[i].level + ")"
+                    document.getElementById("fishingrodupgradeslot" + (i + 1) + "button").innerText = "Upgrade: " + json.fishingRodUpgradeCosts[i] + " Fish"
+                }
+            }
+
+            for (var i = 0; i < 4; i++) {
+                if (i > json.upgradeSlots - 1) {
+                    document.getElementById("fishingrodupgradeslot" + (i + 1)).style.display = "none"
+                    document.getElementById("fishingrodupgradeslot" + (i + 1) + "label").style.display = "none"
+                    document.getElementById("fishingrodupgradeslot" + (i + 1) + "block").style.display = "none"
+                } else {
+                    if (json.upgrades[i] == undefined) {
+                        document.getElementById("fishingrodupgradeslot" + (i + 1)).style.display = "inline"
+                        document.getElementById("fishingrodupgradeslot" + (i + 1) + "label").style.display = "inline"
+                        document.getElementById("fishingrodupgradeslot" + (i + 1)).value = ""
+                        document.getElementById("fishingrodupgradeslot" + (i + 1) + "block").style.display = "none"
+                        console.log("asd3")
+                    } else if (json.upgrades[i].id == "") {
+                        document.getElementById("fishingrodupgradeslot" + (i + 1)).style.display = "inline"
+                        document.getElementById("fishingrodupgradeslot" + (i + 1) + "label").style.display = "inline"
+                        document.getElementById("fishingrodupgradeslot" + (i + 1)).value = ""
+                        document.getElementById("fishingrodupgradeslot" + (i + 1) + "block").style.display = "none"
+                        console.log("asd2")
+                    } else {
+                        document.getElementById("fishingrodupgradeslot" + (i + 1) + "label").style.display = "inline"
+                        document.getElementById("fishingrodupgradeslot" + (i + 1) + "block").style.display = "inline"
+                        document.getElementById("fishingrodupgradeslot" + (i + 1)).style.display = "none"
+                    }
+                }
+            }
+
+            if (json.upgradeSlots == 4) document.getElementById("fishingrodupgradeslotunlock").style.display = "none"
+            else document.getElementById("fishingrodupgradeslotunlock").style.display = "initial"
+
+            document.getElementById("fishingrodupgradeslotunlock").style.marginTop = (((json.upgradeSlots + 0) * 30) + 10) + "px"
+            document.getElementById("fishingrodupgradeslotunlock").innerText = "Unlock Cost: " + json.nextRodSlotCost + " Fish"
+
+        }
+    });
+}
+
+function closeFishingRodMenu() {
+    document.getElementById("fishingrodmenu").style.display = "none"
+}
+
+function openFishingRodMenu() {
+    document.getElementById("fishingrodmenu").style.display = "block"
+}
+
+function changeFishingRodUpgrade(value, slot) {
+    const data = {
+        "username": getCookie("username"),
+        "loginKey": getCookie("loginKey"),
+        "slot": slot,
+        "upgradeId": value
+    };
+    fetch('https://traoxfish.eu-4.evennode.com/changeupgrade', {
+        method: 'POST',
+        credentials: "same-origin",
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    }).then(response => {
+        return response.json();
+    }).then(json => {
+        if (json.status == "success") {
+
+        }
+    });
+}
+
+function purchaseFishingRodUpgrade(slot) {
+    const data = {
+        "username": getCookie("username"),
+        "loginKey": getCookie("loginKey"),
+        "slot": slot
+    };
+    fetch('https://traoxfish.eu-4.evennode.com/purchaseupgrade', {
+        method: 'POST',
+        credentials: "same-origin",
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    }).then(response => {
+        return response.json();
+    }).then(json => {
+        if (json.status == "success") {
+
+        }
+    });
+}
+
+function purchaseUpgradeSlot() {
+    const data = {
+        "username": getCookie("username"),
+        "loginKey": getCookie("loginKey")
+    };
+    fetch('https://traoxfish.eu-4.evennode.com/purchaseupgradeslot', {
+        method: 'POST',
+        credentials: "same-origin",
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    }).then(response => {
+        return response.json();
+    }).then(json => {
+        if (json.status == "success") {
+
         }
     });
 }
@@ -732,7 +851,7 @@ instantTooltips('title', 15);
 
 
 function goFishing(force) {
-    
+
     const data = {
         "username": getCookie("username"),
         "loginKey": getCookie("loginKey")

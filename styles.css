@@ -429,9 +429,9 @@ html,body{min-height:100%;}
 
 .fishbutton {
   font-family: Arial;
-  max-width: calc(49.75%);
-  min-width: calc(49.75%);
-  height: 36px;
+  max-width: calc(49.75% - 52px);
+  min-width: calc(49.75%  - 52px);
+  height: 38px;
   border: none;
   cursor: pointer;
   text-align: center;
@@ -1039,6 +1039,34 @@ input:checked + .slider:before {
   position: fixed;
   z-index: 3;
   display: none;
+}
+
+.fishingrodmenu {
+  background-color: #1d1a2c;
+  min-width: 302%;
+  margin-left: -200%;
+  min-height: 600%;
+  margin-top: -200.5%;
+  background:rgba(29, 26, 44,0.5);
+  position: fixed;
+  z-index: 4;
+  display: none;
+}
+
+.fishingrodmenubackground {
+  background-color: #1d1a2c;
+  position: fixed;
+  display: block;
+  outline-width: 1px;
+  outline-color: white;
+  outline-style: solid;
+  left: calc(50% - 284px);
+  bottom: calc(50% - 286px);
+  width: 568px;
+  min-height: 612px;
+  max-width: 568px;
+  max-height: 612px;
+  z-index: 1000;
 }
 
 .profilebackground {
