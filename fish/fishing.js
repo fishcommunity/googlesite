@@ -628,14 +628,15 @@ function getFish() {
             for (var i = 0; i < json.upgradeSlots; i++) {
                 if (json.upgrades[i] != undefined) {
                     document.getElementById("fishingrodupgradeslot" + (i + 1) + "level").innerText = json.upgrades[i].name + " (Lvl " + json.upgrades[i].level + ")"
-                    document.getElementById("fishingrodupgradeslot" + (i + 1) + "button").innerText = "Upgrade: " + json.fishingRodUpgradeCosts[i] + " Fish"
+                    document.getElementById("fishingrodupgradeslot" + (i + 1) + "button").innerText = "Upgrade: " + formatNumber(json.fishingRodUpgradeCosts[i]) + " Fish"
                 }
             }
 
-            for (var i = 0; i < 4; i++) {
+            for (var i = 0; i < 5; i++) {
                 if (i > json.upgradeSlots - 1) {
+                    console.log("asd")
                     document.getElementById("fishingrodupgradeslot" + (i + 1)).style.display = "none"
-                    document.getElementById("fishingrodupgradeslot" + (i + 1) + "label").style.display = "none"
+                    if (i + 2 <= 5) document.getElementById("fishingrodupgradeslot" + (i + 2) + "label").style.display = "none"
                     document.getElementById("fishingrodupgradeslot" + (i + 1) + "block").style.display = "none"
                 } else {
                     if (json.upgrades[i] == undefined) {
@@ -643,14 +644,13 @@ function getFish() {
                         document.getElementById("fishingrodupgradeslot" + (i + 1) + "label").style.display = "inline"
                         document.getElementById("fishingrodupgradeslot" + (i + 1)).value = ""
                         document.getElementById("fishingrodupgradeslot" + (i + 1) + "block").style.display = "none"
-                        console.log("asd3")
                     } else if (json.upgrades[i].id == "") {
                         document.getElementById("fishingrodupgradeslot" + (i + 1)).style.display = "inline"
                         document.getElementById("fishingrodupgradeslot" + (i + 1) + "label").style.display = "inline"
                         document.getElementById("fishingrodupgradeslot" + (i + 1)).value = ""
                         document.getElementById("fishingrodupgradeslot" + (i + 1) + "block").style.display = "none"
-                        console.log("asd2")
                     } else {
+                        console.log("asd2")
                         document.getElementById("fishingrodupgradeslot" + (i + 1) + "label").style.display = "inline"
                         document.getElementById("fishingrodupgradeslot" + (i + 1) + "block").style.display = "inline"
                         document.getElementById("fishingrodupgradeslot" + (i + 1)).style.display = "none"
@@ -658,11 +658,11 @@ function getFish() {
                 }
             }
 
-            if (json.upgradeSlots == 4) document.getElementById("fishingrodupgradeslotunlock").style.display = "none"
+            if (json.upgradeSlots == 5) document.getElementById("fishingrodupgradeslotunlock").style.display = "none"
             else document.getElementById("fishingrodupgradeslotunlock").style.display = "initial"
 
             document.getElementById("fishingrodupgradeslotunlock").style.marginTop = (((json.upgradeSlots + 0) * 30) + 10) + "px"
-            document.getElementById("fishingrodupgradeslotunlock").innerText = "Unlock Cost: " + json.nextRodSlotCost + " Fish"
+            document.getElementById("fishingrodupgradeslotunlock").innerText = "Unlock Cost: " + formatNumber(json.nextRodSlotCost) + " Fish"
 
         }
     });
@@ -935,7 +935,7 @@ function viewProfile(profile, self) {
             var playtime = json.playtime
             var friends = json.friends
 
-            var fishPerClick = json.fishPerClick
+            var fishingRodStats = json.fishingRodStats
 
             if (playtime == "") playtime = "None"
 
@@ -978,7 +978,10 @@ function viewProfile(profile, self) {
             document.getElementById("profile-fish").innerText = "Fish: " + formatNumber(fish)
             document.getElementById("profile-alltimefish").innerText = "All Time Fish: " + formatNumber(allTimeFish)
             document.getElementById("profile-fishgambled").innerText = "Fish Gambled: " + formatNumber(fishGambled)
-            document.getElementById("profile-fishperclick").innerText = "Fish Per Click: " + formatNumber(fishPerClick)
+            document.getElementById("profile-fishingrodstats").innerHTML = "Fishing Rod Stats:<br>"
+            for (var i = 0; i < json.fishingRodStats.length; i++) {
+                document.getElementById("profile-fishingrodstats").innerHTML += json.fishingRodStats[i] + "<br>"
+            }
             document.getElementById("profile-joindate").innerText = "Join Date: " + joinDate
             document.getElementById("profile-lastonline").innerText = "Last Online: " + lastOnlineDate
             document.getElementById("profile-playtime").innerText = "Playtime: " + playtime
