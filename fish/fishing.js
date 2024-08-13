@@ -892,7 +892,7 @@ function goFishing(force) {
                 opacity -= 0.025
                 yVelocity -= 0.2
 
-            }, 1)
+            }, 10)
 
             delay(1000).then(() => {
                 clearInterval(interval)
