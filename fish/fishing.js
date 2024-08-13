@@ -889,8 +889,12 @@ function goFishing(force) {
 
                 element.style.color = "rgba(255, 255, 255, " + opacity + ")"
 
-                opacity -= 0.025
+                opacity -= 0.02
                 yVelocity -= 0.2
+                if (opacity <= 0 || yPos < -300) {
+                    clearInterval(interval)
+                    element.remove()
+                }
 
             }, 10)
 
