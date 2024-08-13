@@ -1053,6 +1053,34 @@ input:checked + .slider:before {
   display: none;
 }
 
+.fishingrodresetconfirm {
+  background-color: #1d1a2c;
+  min-width: 302%;
+  margin-left: -200%;
+  min-height: 600%;
+  margin-top: -200.5%;
+  background:rgba(29, 26, 44,0.5);
+  position: fixed;
+  z-index: 4;
+  display: none;
+}
+
+.fishingrodresetconfirmbackground {
+  background-color: #1d1a2c;
+  position: fixed;
+  display: block;
+  outline-width: 1px;
+  outline-color: white;
+  outline-style: solid;
+  left: calc(50% - 234px);
+  bottom: calc(50% - 106px);
+  width: 468px;
+  min-height: 162px;
+  max-width: 468px;
+  max-height: 162px;
+  z-index: 1000;
+}
+
 .fishingrodmenubackground {
   background-color: #1d1a2c;
   position: fixed;

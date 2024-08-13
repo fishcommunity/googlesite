@@ -697,6 +697,21 @@ function changeFishingRodUpgrade(value, slot) {
     });
 }
 
+function closeFishingRodResetConfirm() {
+    document.getElementById("fishingrodresetconfirm").style.display = "none"
+}
+
+var resetConfirmSlot = -1
+function openFishingRodResetConfirm(slot) {
+    resetConfirmSlot = slot
+    document.getElementById("fishingrodresetconfirm").style.display = "block"
+}
+
+function confirmResetSlot() {
+    changeFishingRodUpgrade('', resetConfirmSlot)
+    document.getElementById("fishingrodresetconfirm").style.display = "none"
+}
+
 function purchaseFishingRodUpgrade(slot) {
     const data = {
         "username": getCookie("username"),
