@@ -866,6 +866,39 @@ function goFishing(force) {
     }).then(json => {
         if (json.status == "success") {
             document.getElementById("fishcount").textContent = formatNumber(json.fish)
+            var element = document.createElement("p")
+            element.innerText = "+ " + formatNumber(json.fishGained) + " Fish"
+            element.style.fontSize = "12px"
+            element.style.maxWidth = "100%"
+            element.style.textAlign = "center"
+            element.style.position = "absolute"
+            element.style.minWidth = "100%"
+
+            var xVelocity = (Math.random() * 5) - 2.5
+            var yVelocity = 2
+            var xPos = 0
+            var yPos = 0
+            var opacity = 1
+
+            document.getElementById("fishGainedAnchor").appendChild(element)
+
+            var interval = setInterval(() => {
+                element.style.transform = "translate(" + xPos + "px, " + (-yPos) + "px)"
+                xPos += xVelocity
+                yPos += yVelocity
+
+                element.style.color = "rgba(255, 255, 255, " + opacity + ")"
+
+                opacity -= 0.025
+                yVelocity -= 0.2
+
+            }, 1)
+
+            delay(1000).then(() => {
+                clearInterval(interval)
+                element.remove()
+            })
+
         }
     });
 }
