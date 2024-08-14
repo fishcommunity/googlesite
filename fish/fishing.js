@@ -662,6 +662,10 @@ function getFish() {
             document.getElementById("fishingrodupgradeslotunlock").style.marginTop = (((json.upgradeSlots + 0) * 30) + 10) + "px"
             document.getElementById("fishingrodupgradeslotunlock").innerText = "Unlock Cost: " + formatNumber(json.nextRodSlotCost) + " Fish"
 
+            if (json.lastAutoFish != undefined) {
+                fishGainedEffect(json.lastAutoFish)
+            }
+
         }
     });
 }
@@ -881,45 +885,49 @@ function goFishing(force) {
     }).then(json => {
         if (json.status == "success") {
             document.getElementById("fishcount").textContent = formatNumber(json.fish)
-            var element = document.createElement("p")
-            element.innerText = "+ " + formatNumber(json.fishGained) + " Fish"
-            element.style.fontSize = "12px"
-            element.style.maxWidth = "100%"
-            element.style.textAlign = "center"
-            element.style.position = "absolute"
-            element.style.minWidth = "100%"
-
-            var xVelocity = (Math.random() * 5) - 2.5
-            var yVelocity = 2
-            var xPos = 0
-            var yPos = 0
-            var opacity = 1
-
-            document.getElementById("fishGainedAnchor").appendChild(element)
-
-            var interval = setInterval(() => {
-                element.style.transform = "translate(" + xPos + "px, " + (-yPos) + "px)"
-                xPos += xVelocity
-                yPos += yVelocity
-
-                element.style.color = "rgba(255, 255, 255, " + opacity + ")"
-
-                opacity -= 0.02
-                yVelocity -= 0.2
-                if (opacity <= 0 || yPos < -300) {
-                    clearInterval(interval)
-                    element.remove()
-                }
-
-            }, 10)
-
-            delay(1000).then(() => {
-                clearInterval(interval)
-                element.remove()
-            })
-
+            fishGainedEffect(json.fishGained)
         }
     });
+}
+
+function fishGainedEffect(amount) {
+    
+    var element = document.createElement("p")
+    element.innerText = "+ " + formatNumber(amount) + " Fish"
+    element.style.fontSize = "12px"
+    element.style.maxWidth = "100%"
+    element.style.textAlign = "center"
+    element.style.position = "absolute"
+    element.style.minWidth = "100%"
+
+    var xVelocity = (Math.random() * 5) - 2.5
+    var yVelocity = 2
+    var xPos = 0
+    var yPos = 0
+    var opacity = 1
+
+    document.getElementById("fishGainedAnchor").appendChild(element)
+
+    var interval = setInterval(() => {
+        element.style.transform = "translate(" + xPos + "px, " + (-yPos) + "px)"
+        xPos += xVelocity
+        yPos += yVelocity
+
+        element.style.color = "rgba(255, 255, 255, " + opacity + ")"
+
+        opacity -= 0.02
+        yVelocity -= 0.2
+        if (opacity <= 0 || yPos < -300) {
+            clearInterval(interval)
+            element.remove()
+        }
+
+    }, 10)
+
+    delay(1000).then(() => {
+        clearInterval(interval)
+        element.remove()
+    })
 }
 
 function closeProfile() {
@@ -932,7 +940,7 @@ function closeProfile() {
     document.getElementById("profile-username").innerText = "Loading..."
     document.getElementById("profile-rank").innerText = ""
     document.getElementById("profile-fish").innerText = "Fish: Loading..."
-    document.getElementById("profile-fishperclick").innerText = "Fish Per Click: Loading..."
+    document.getElementById("profile-fishingrodstats").innerText = "Fishing Rod Stats: Loading..."
     document.getElementById("profile-alltimefish").innerText = "All Time Fish: Loading..."
     document.getElementById("profile-fishgambled").innerText = "Fish Gambled: Loading..."
     document.getElementById("profile-joindate").innerText = "Join Date: Loading..."
