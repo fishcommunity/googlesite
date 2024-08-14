@@ -568,10 +568,10 @@ delay(5).then(() => {
     setInterval(function(){ 
         keepOnline();
         updateLeaderboards();
+        getFish();
     }, 333);
 
     setInterval(function(){ 
-        getFish();
         getMessages(false);
     }, 1000);
 
